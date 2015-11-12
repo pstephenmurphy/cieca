@@ -19,7 +19,7 @@ public class AdminEndpoint {
     @Path("/{id:[0-9][0-9]*/admin}")
     @Consumes("application/json")
     public Response create(@PathParam("id") final Long id, final AdminInfoType admininfotype) {
-        return Response.status(Status.METHOD_NOT_ALLOWED).build();
+        return Response.status(Status.NOT_IMPLEMENTED).build();
     }
 
     @GET
