@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.mitchell.estimate.resource.dto.adjustment.PriceAdjustmentType;
-import com.mitchell.estimate.resource.dto.vehicle.UnitOfMeasureOpenEnumType;
+import com.mitchell.estimate.resource.dto.vehicle.UnitofMeasureOpenEnum;
 
 
 /**
@@ -75,7 +75,7 @@ public class OtherChargesInfoType
 
     private final static long serialVersionUID = 20120730L;
     @XmlElement(name = "OtherChargesType", required = true)
-    protected OtherChargesClosedEnumType otherChargesType;
+    protected OtherChargesEnum otherChargesType;
     @XmlElement(name = "Price")
     protected BigDecimal price;
     @XmlElement(name = "UnitPrice")
@@ -85,7 +85,7 @@ public class OtherChargesInfoType
     @XmlElement(name = "PriceJudgmentInd")
     protected Boolean priceJudgmentInd;
     @XmlElement(name = "UnitOfMeasure")
-    protected UnitOfMeasureOpenEnumType unitOfMeasure;
+    protected UnitofMeasureOpenEnum unitOfMeasure;
     @XmlElement(name = "Quantity")
     protected BigDecimal quantity;
     @XmlElement(name = "PriceAdjustment")
@@ -104,10 +104,10 @@ public class OtherChargesInfoType
      * 
      * @return
      *     possible object is
-     *     {@link OtherChargesClosedEnumType }
+     *     {@link OtherChargesEnum }
      *     
      */
-    public OtherChargesClosedEnumType getOtherChargesType() {
+    public OtherChargesEnum getOtherChargesType() {
         return otherChargesType;
     }
 
@@ -116,10 +116,10 @@ public class OtherChargesInfoType
      * 
      * @param value
      *     allowed object is
-     *     {@link OtherChargesClosedEnumType }
+     *     {@link OtherChargesEnum }
      *     
      */
-    public void setOtherChargesType(OtherChargesClosedEnumType value) {
+    public void setOtherChargesType(OtherChargesEnum value) {
         this.otherChargesType = value;
     }
 
@@ -224,10 +224,10 @@ public class OtherChargesInfoType
      * 
      * @return
      *     possible object is
-     *     {@link UnitOfMeasureOpenEnumType }
+     *     {@link UnitofMeasureOpenEnum }
      *     
      */
-    public UnitOfMeasureOpenEnumType getUnitOfMeasure() {
+    public UnitofMeasureOpenEnum getUnitOfMeasure() {
         return unitOfMeasure;
     }
 
@@ -236,10 +236,10 @@ public class OtherChargesInfoType
      * 
      * @param value
      *     allowed object is
-     *     {@link UnitOfMeasureOpenEnumType }
+     *     {@link UnitofMeasureOpenEnum }
      *     
      */
-    public void setUnitOfMeasure(UnitOfMeasureOpenEnumType value) {
+    public void setUnitOfMeasure(UnitofMeasureOpenEnum value) {
         this.unitOfMeasure = value;
     }
 

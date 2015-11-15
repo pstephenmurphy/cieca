@@ -19,7 +19,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.mitchell.estimate.resource.dto.adjustment.LaborAdjustmentType;
-import com.mitchell.estimate.resource.dto.rate.material.LaborOperationClosedEnumType;
 
 /**
  * <p>Java class for LaborInfoType complex type.
@@ -90,11 +89,11 @@ public class LaborInfoType
 
     private final static long serialVersionUID = 20120730L;
     @XmlElement(name = "LaborType", required = true)
-    protected LaborTypeClosedEnumType laborType;
+    protected LaborTypeEnum laborType;
     @XmlElement(name = "DatabaseLaborType")
-    protected LaborTypeClosedEnumType databaseLaborType;
+    protected LaborTypeEnum databaseLaborType;
     @XmlElement(name = "LaborOperation")
-    protected LaborOperationClosedEnumType laborOperation;
+    protected LaborOperationEnum laborOperation;
     @XmlElement(name = "LaborHours")
     protected BigDecimal laborHours;
     @XmlElement(name = "DatabaseLaborHours")
@@ -137,10 +136,10 @@ public class LaborInfoType
      * 
      * @return
      *     possible object is
-     *     {@link LaborTypeClosedEnumType }
+     *     {@link LaborTypeEnum }
      *     
      */
-    public LaborTypeClosedEnumType getLaborType() {
+    public LaborTypeEnum getLaborType() {
         return laborType;
     }
 
@@ -149,10 +148,10 @@ public class LaborInfoType
      * 
      * @param value
      *     allowed object is
-     *     {@link LaborTypeClosedEnumType }
+     *     {@link LaborTypeEnum }
      *     
      */
-    public void setLaborType(LaborTypeClosedEnumType value) {
+    public void setLaborType(LaborTypeEnum value) {
         this.laborType = value;
     }
 
@@ -161,10 +160,10 @@ public class LaborInfoType
      * 
      * @return
      *     possible object is
-     *     {@link LaborTypeClosedEnumType }
+     *     {@link LaborTypeEnum }
      *     
      */
-    public LaborTypeClosedEnumType getDatabaseLaborType() {
+    public LaborTypeEnum getDatabaseLaborType() {
         return databaseLaborType;
     }
 
@@ -173,10 +172,10 @@ public class LaborInfoType
      * 
      * @param value
      *     allowed object is
-     *     {@link LaborTypeClosedEnumType }
+     *     {@link LaborTypeEnum }
      *     
      */
-    public void setDatabaseLaborType(LaborTypeClosedEnumType value) {
+    public void setDatabaseLaborType(LaborTypeEnum value) {
         this.databaseLaborType = value;
     }
 
@@ -185,10 +184,10 @@ public class LaborInfoType
      * 
      * @return
      *     possible object is
-     *     {@link LaborOperationClosedEnumType }
+     *     {@link LaborOperationEnum }
      *     
      */
-    public LaborOperationClosedEnumType getLaborOperation() {
+    public LaborOperationEnum getLaborOperation() {
         return laborOperation;
     }
 
@@ -197,10 +196,10 @@ public class LaborInfoType
      * 
      * @param value
      *     allowed object is
-     *     {@link LaborOperationClosedEnumType }
+     *     {@link LaborOperationEnum }
      *     
      */
-    public void setLaborOperation(LaborOperationClosedEnumType value) {
+    public void setLaborOperation(LaborOperationEnum value) {
         this.laborOperation = value;
     }
 

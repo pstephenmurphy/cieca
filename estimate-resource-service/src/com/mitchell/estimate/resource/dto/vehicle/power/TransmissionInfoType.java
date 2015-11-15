@@ -9,10 +9,13 @@
 package com.mitchell.estimate.resource.dto.vehicle.power;
 
 import java.io.Serializable;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+
+import com.mitchell.estimate.resource.dto.vehicle.options.OptionsType;
 
 
 /**

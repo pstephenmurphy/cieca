@@ -50,10 +50,13 @@ public class CanadianTaxType
 {
 
     private final static long serialVersionUID = 20120730L;
+    
     @XmlElement(name = "TaxableInd")
     protected boolean taxableInd;
+    
     @XmlElement(name = "GoodsServicesTaxRate")
     protected BigDecimal goodsServicesTaxRate;
+    
     @XmlElement(name = "HarmonizedTaxRate")
     protected BigDecimal harmonizedTaxRate;
 

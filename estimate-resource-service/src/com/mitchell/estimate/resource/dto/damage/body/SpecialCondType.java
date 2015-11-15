@@ -5,7 +5,6 @@
 // Generated on: 2015.11.03 at 12:33:26 PM PST 
 //
 
-
 package com.mitchell.estimate.resource.dto.damage.body;
 
 import java.io.Serializable;
@@ -17,18 +16,20 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>Java class for SpecialCondType complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SpecialCondType">
+ * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;choice minOccurs="0">
- *           &lt;element name="SpecialCondDesc" type="{http://www.cieca.com/BMS}Char_50"/>
- *           &lt;element name="SpecialCondType" type="{http://www.cieca.com/BMS}SpecialConditionTypeClosedEnumType"/>
+ *           &lt;element name="SpecialCondDesc" type="{http://www.cieca.com/BMS}SpecialCondDescType"/>
+ *           &lt;element name="SpecialCondType" type="{http://www.cieca.com/BMS}SpecialConditionTypeEnum"/>
  *         &lt;/choice>
  *         &lt;element name="SpecialCondAmt" type="{http://www.cieca.com/BMS}Currency" minOccurs="0"/>
  *       &lt;/sequence>
@@ -40,30 +41,22 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SpecialCondType", propOrder = {
-    "specialCondDesc",
-    "specialCondType",
-    "specialCondAmt"
-})
-public class SpecialCondType
-    implements Serializable
-{
+@XmlType(name = "SpecialCondType", propOrder = { "specialCondDesc", "specialCondType", "specialCondAmt" })
+public class SpecialCondType implements Serializable {
 
-    private final static long serialVersionUID = 20120730L;
+    private final static long serialVersionUID = 20120208L;
     @XmlElement(name = "SpecialCondDesc")
     protected String specialCondDesc;
     @XmlElement(name = "SpecialCondType")
-    protected SpecialConditionTypeClosedEnumType specialCondType;
+    protected SpecialConditionTypeEnum specialCondType;
     @XmlElement(name = "SpecialCondAmt")
     protected BigDecimal specialCondAmt;
 
     /**
      * Gets the value of the specialCondDesc property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
     public String getSpecialCondDesc() {
         return specialCondDesc;
@@ -72,10 +65,8 @@ public class SpecialCondType
     /**
      * Sets the value of the specialCondDesc property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value allowed object is {@link String }
+     * 
      */
     public void setSpecialCondDesc(String value) {
         this.specialCondDesc = value;
@@ -84,34 +75,28 @@ public class SpecialCondType
     /**
      * Gets the value of the specialCondType property.
      * 
-     * @return
-     *     possible object is
-     *     {@link SpecialConditionTypeClosedEnumType }
-     *     
+     * @return possible object is {@link SpecialConditionTypeEnum }
+     * 
      */
-    public SpecialConditionTypeClosedEnumType getSpecialCondType() {
+    public SpecialConditionTypeEnum getSpecialCondType() {
         return specialCondType;
     }
 
     /**
      * Sets the value of the specialCondType property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SpecialConditionTypeClosedEnumType }
-     *     
+     * @param value allowed object is {@link SpecialConditionTypeEnum }
+     * 
      */
-    public void setSpecialCondType(SpecialConditionTypeClosedEnumType value) {
+    public void setSpecialCondType(SpecialConditionTypeEnum value) {
         this.specialCondType = value;
     }
 
     /**
      * Gets the value of the specialCondAmt property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
+     * @return possible object is {@link BigDecimal }
+     * 
      */
     public BigDecimal getSpecialCondAmt() {
         return specialCondAmt;
@@ -120,10 +105,8 @@ public class SpecialCondType
     /**
      * Sets the value of the specialCondAmt property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
+     * @param value allowed object is {@link BigDecimal }
+     * 
      */
     public void setSpecialCondAmt(BigDecimal value) {
         this.specialCondAmt = value;

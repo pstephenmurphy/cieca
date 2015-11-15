@@ -50,12 +50,16 @@ public class LaborAdjustmentType
 {
 
     private final static long serialVersionUID = 20120730L;
+    
     @XmlElement(name = "AdjustmentType", required = true)
-    protected AdjustmentTypeClosedEnumType adjustmentType;
+    protected AdjustmentTypeEnum adjustmentType;
+    
     @XmlElement(name = "AdjustmentPct")
     protected BigDecimal adjustmentPct;
+    
     @XmlElement(name = "AdjustmentAmt")
     protected BigDecimal adjustmentAmt;
+    
     @XmlElement(name = "AdjustmentHours")
     protected BigDecimal adjustmentHours;
 
@@ -64,10 +68,10 @@ public class LaborAdjustmentType
      * 
      * @return
      *     possible object is
-     *     {@link AdjustmentTypeClosedEnumType }
+     *     {@link AdjustmentTypeEnum }
      *     
      */
-    public AdjustmentTypeClosedEnumType getAdjustmentType() {
+    public AdjustmentTypeEnum getAdjustmentType() {
         return adjustmentType;
     }
 
@@ -76,10 +80,10 @@ public class LaborAdjustmentType
      * 
      * @param value
      *     allowed object is
-     *     {@link AdjustmentTypeClosedEnumType }
+     *     {@link AdjustmentTypeEnum }
      *     
      */
-    public void setAdjustmentType(AdjustmentTypeClosedEnumType value) {
+    public void setAdjustmentType(AdjustmentTypeEnum value) {
         this.adjustmentType = value;
     }
 

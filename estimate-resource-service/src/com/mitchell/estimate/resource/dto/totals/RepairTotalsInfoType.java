@@ -17,6 +17,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+import com.mitchell.estimate.resource.dto.damage.LineTypeEnum;
+
 /**
  * <p>Java class for RepairTotalsInfoType complex type.
  * 
@@ -65,7 +67,7 @@ public class RepairTotalsInfoType implements Serializable
     @XmlElement(name = "SummaryTotalsInfo", required = true)
     protected List<TotalsInfoType> summaryTotalsInfo;
     @XmlElement(name = "RepairTotalsType")
-    protected LineTypeClosedEnumType repairTotalsType;
+    protected LineTypeEnum repairTotalsType;
 
     /**
      * Gets the value of the laborTotalsInfo property.
@@ -212,10 +214,10 @@ public class RepairTotalsInfoType implements Serializable
      * 
      * @return
      *     possible object is
-     *     {@link LineTypeClosedEnumType }
+     *     {@link LineTypeEnum }
      *     
      */
-    public LineTypeClosedEnumType getRepairTotalsType() {
+    public LineTypeEnum getRepairTotalsType() {
         return repairTotalsType;
     }
 
@@ -224,10 +226,10 @@ public class RepairTotalsInfoType implements Serializable
      * 
      * @param value
      *     allowed object is
-     *     {@link LineTypeClosedEnumType }
+     *     {@link LineTypeEnum }
      *     
      */
-    public void setRepairTotalsType(LineTypeClosedEnumType value) {
+    public void setRepairTotalsType(LineTypeEnum value) {
         this.repairTotalsType = value;
     }
 

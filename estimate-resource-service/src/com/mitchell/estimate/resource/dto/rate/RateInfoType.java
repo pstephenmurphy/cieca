@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlType;
 import com.mitchell.estimate.resource.dto.adjustment.AdjustmentInfoType;
 import com.mitchell.estimate.resource.dto.rate.material.MaterialCalcSettingsType;
 import com.mitchell.estimate.resource.dto.rate.tax.TaxInfoType;
-import com.mitchell.estimate.resource.dto.rate.tax.TierInfoType;
+import com.mitchell.estimate.resource.dto.rate.tax.RateTierInfoType;
 
 /**
  * <p>Java class for RateInfoType complex type.
@@ -54,7 +54,6 @@ import com.mitchell.estimate.resource.dto.rate.tax.TierInfoType;
     "rateType",
     "rateDesc",
     "rateTierInfo",
-    "rateTierHistory",
     "taxableInd",
     "taxRate",
     "adjustmentInfo",
@@ -66,20 +65,28 @@ public class RateInfoType
 {
 
     private final static long serialVersionUID = 20120730L;
+    
     @XmlElement(name = "RateType", required = true)
-    protected String rateType;
+    protected RateTypeEnum rateType;
+    
     @XmlElement(name = "RateDesc")
     protected String rateDesc;
+    
     @XmlElement(name = "RateTierInfo")
-    protected List<TierInfoType> rateTierInfo;
+    protected List<RateTierInfoType> rateTierInfo;
+    
    @XmlElement(name = "TaxableInd")
     protected Boolean taxableInd;
+   
     @XmlElement(name = "TaxRate")
     protected BigDecimal taxRate;
+    
     @XmlElement(name = "AdjustmentInfo")
     protected List<AdjustmentInfoType> adjustmentInfo;
+    
     @XmlElement(name = "TaxInfo")
     protected List<TaxInfoType> taxInfo;
+    
     @XmlElement(name = "MaterialCalcSettings")
     protected MaterialCalcSettingsType materialCalcSettings;
 
@@ -91,7 +98,7 @@ public class RateInfoType
      *     {@link String }
      *     
      */
-    public String getRateType() {
+    public RateTypeEnum getRateType() {
         return rateType;
     }
 
@@ -103,7 +110,7 @@ public class RateInfoType
      *     {@link String }
      *     
      */
-    public void setRateType(String value) {
+    public void setRateType(RateTypeEnum value) {
         this.rateType = value;
     }
 
@@ -149,13 +156,13 @@ public class RateInfoType
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link TierInfoType }
+     * {@link RateTierInfoType }
      * 
      * 
      */
-    public List<TierInfoType> getRateTierInfo() {
+    public List<RateTierInfoType> getRateTierInfo() {
         if (rateTierInfo == null) {
-            rateTierInfo = new ArrayList<TierInfoType>();
+            rateTierInfo = new ArrayList<RateTierInfoType>();
         }
         return this.rateTierInfo;
     }

@@ -9,6 +9,7 @@
 package com.mitchell.estimate.resource.dto.vehicle;
 
 import java.io.Serializable;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -16,18 +17,39 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for TrimType complex type.
+ * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TrimType">
+ * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="TrimColor" type="{http://www.cieca.com/BMS}Char_20" minOccurs="0"/>
- *         &lt;element name="TrimCode" type="{http://www.cieca.com/BMS}Char_20" minOccurs="0"/>
- *         &lt;element name="MoldingCode" type="{http://www.cieca.com/BMS}Char_20" minOccurs="0"/>
+ *         &lt;element name="TrimColor" minOccurs="0">
+ *           &lt;simpleType>
+ *             &lt;restriction base="{http://www.cieca.com/BMS}C">
+ *               &lt;maxLength value="20"/>
+ *               &lt;minLength value="1"/>
+ *             &lt;/restriction>
+ *           &lt;/simpleType>
+ *         &lt;/element>
+ *         &lt;element name="TrimCode" minOccurs="0">
+ *           &lt;simpleType>
+ *             &lt;restriction base="{http://www.cieca.com/BMS}C">
+ *               &lt;maxLength value="20"/>
+ *               &lt;minLength value="1"/>
+ *             &lt;/restriction>
+ *           &lt;/simpleType>
+ *         &lt;/element>
+ *         &lt;element name="MoldingCode" minOccurs="0">
+ *           &lt;simpleType>
+ *             &lt;restriction base="{http://www.cieca.com/BMS}C">
+ *               &lt;maxLength value="20"/>
+ *               &lt;minLength value="1"/>
+ *             &lt;/restriction>
+ *           &lt;/simpleType>
+ *         &lt;/element>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -46,7 +68,7 @@ public class TrimType
     implements Serializable
 {
 
-    private final static long serialVersionUID = 20120730L;
+    private final static long serialVersionUID = 20120208L;
     @XmlElement(name = "TrimColor")
     protected String trimColor;
     @XmlElement(name = "TrimCode")

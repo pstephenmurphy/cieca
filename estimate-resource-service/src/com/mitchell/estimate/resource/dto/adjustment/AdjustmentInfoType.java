@@ -46,8 +46,10 @@ public class AdjustmentInfoType
 {
 
     private final static long serialVersionUID = 20120730L;
+    
     @XmlElement(name = "AdjustmentType", required = true)
-    protected AdjustmentTypeClosedEnumType adjustmentType;
+    protected AdjustmentTypeEnum adjustmentType;
+    
     @XmlElement(name = "AdjustmentPct", required = true)
     protected BigDecimal adjustmentPct;
 
@@ -56,10 +58,10 @@ public class AdjustmentInfoType
      * 
      * @return
      *     possible object is
-     *     {@link AdjustmentTypeClosedEnumType }
+     *     {@link AdjustmentTypeEnum }
      *     
      */
-    public AdjustmentTypeClosedEnumType getAdjustmentType() {
+    public AdjustmentTypeEnum getAdjustmentType() {
         return adjustmentType;
     }
 
@@ -68,10 +70,10 @@ public class AdjustmentInfoType
      * 
      * @param value
      *     allowed object is
-     *     {@link AdjustmentTypeClosedEnumType }
+     *     {@link AdjustmentTypeEnum }
      *     
      */
-    public void setAdjustmentType(AdjustmentTypeClosedEnumType value) {
+    public void setAdjustmentType(AdjustmentTypeEnum value) {
         this.adjustmentType = value;
     }
 

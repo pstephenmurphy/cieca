@@ -5,7 +5,6 @@
 // Generated on: 2015.11.03 at 12:33:26 PM PST 
 //
 
-
 package com.mitchell.estimate.resource.dto.damage.body;
 
 import java.io.Serializable;
@@ -18,20 +17,38 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>Java class for BodyPanelType complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="BodyPanelType">
+ * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;choice>
- *           &lt;element name="BodyPanelDesc" type="{http://www.cieca.com/BMS}Char_50"/>
- *           &lt;element name="BodyPanelCode" type="{http://www.cieca.com/BMS}PanelCodeClosedEnumType"/>
+ *           &lt;element name="BodyPanelDesc" type="{http://www.cieca.com/BMS}BodyPanelDescType"/>
+ *           &lt;element name="BodyPanelCode" type="{http://www.cieca.com/BMS}PanelCodeEnum"/>
  *         &lt;/choice>
- *         &lt;element name="Dents" type="{http://www.cieca.com/BMS}DentsType" maxOccurs="unbounded"/>
+ *         &lt;element name="Dents" maxOccurs="unbounded">
+ *           &lt;complexType>
+ *             &lt;complexContent>
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 &lt;sequence>
+ *                   &lt;choice>
+ *                     &lt;element name="NumOfDents" type="{http://www.cieca.com/BMS}NumOfDentsType"/>
+ *                     &lt;element name="MaxNumOfDents" type="{http://www.cieca.com/BMS}NumOfDentsType"/>
+ *                   &lt;/choice>
+ *                   &lt;element name="DentsSize" type="{http://www.cieca.com/BMS}DentsSizeEnum"/>
+ *                   &lt;element name="DentsSeverity" type="{http://www.cieca.com/BMS}DamageSeverityEnum"/>
+ *                   &lt;element name="DentsRepairAmt" type="{http://www.cieca.com/BMS}Currency"/>
+ *                 &lt;/sequence>
+ *               &lt;/restriction>
+ *             &lt;/complexContent>
+ *           &lt;/complexType>
+ *         &lt;/element>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -41,30 +58,22 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BodyPanelType", propOrder = {
-    "bodyPanelDesc",
-    "bodyPanelCode",
-    "dents"
-})
-public class BodyPanelType
-    implements Serializable
-{
+@XmlType(name = "BodyPanelType", propOrder = { "bodyPanelDesc", "bodyPanelCode", "dents" })
+public class BodyPanelType implements Serializable {
 
-    private final static long serialVersionUID = 20120730L;
+    private final static long serialVersionUID = 20120208L;
     @XmlElement(name = "BodyPanelDesc")
     protected String bodyPanelDesc;
     @XmlElement(name = "BodyPanelCode")
-    protected PanelCodeClosedEnumType bodyPanelCode;
+    protected PanelCodeEnum bodyPanelCode;
     @XmlElement(name = "Dents", required = true)
     protected List<DentsType> dents;
 
     /**
      * Gets the value of the bodyPanelDesc property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
     public String getBodyPanelDesc() {
         return bodyPanelDesc;
@@ -73,10 +82,8 @@ public class BodyPanelType
     /**
      * Sets the value of the bodyPanelDesc property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value allowed object is {@link String }
+     * 
      */
     public void setBodyPanelDesc(String value) {
         this.bodyPanelDesc = value;
@@ -85,24 +92,20 @@ public class BodyPanelType
     /**
      * Gets the value of the bodyPanelCode property.
      * 
-     * @return
-     *     possible object is
-     *     {@link PanelCodeClosedEnumType }
-     *     
+     * @return possible object is {@link PanelCodeEnum }
+     * 
      */
-    public PanelCodeClosedEnumType getBodyPanelCode() {
+    public PanelCodeEnum getBodyPanelCode() {
         return bodyPanelCode;
     }
 
     /**
      * Sets the value of the bodyPanelCode property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link PanelCodeClosedEnumType }
-     *     
+     * @param value allowed object is {@link PanelCodeEnum }
+     * 
      */
-    public void setBodyPanelCode(PanelCodeClosedEnumType value) {
+    public void setBodyPanelCode(PanelCodeEnum value) {
         this.bodyPanelCode = value;
     }
 
@@ -110,21 +113,20 @@ public class BodyPanelType
      * Gets the value of the dents property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dents property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE> method for the dents
+     * property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getDents().add(newItem);
+     * getDents().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link DentsType }
+     * Objects of the following type(s) are allowed in the list {@link DentsType }
      * 
      * 
      */

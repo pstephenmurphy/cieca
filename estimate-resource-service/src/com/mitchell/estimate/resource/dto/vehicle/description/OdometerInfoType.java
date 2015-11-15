@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-import com.mitchell.estimate.resource.dto.vehicle.UnitOfMeasureOpenEnumType;
+import com.mitchell.estimate.resource.dto.vehicle.UnitofMeasureOpenEnum;
 
 /**
  * <p>Java class for OdometerInfoType complex type.
@@ -56,9 +56,9 @@ public class OdometerInfoType
     @XmlElement(name = "OdometerReading")
     protected Integer odometerReading;
     @XmlElement(name = "OdometerReadingCode")
-    protected OdometerReadingCodeClosedEnumType odometerReadingCode;
+    protected OdometerReadingCodeEnum odometerReadingCode;
     @XmlElement(name = "OdometerReadingMeasure")
-    protected UnitOfMeasureOpenEnumType odometerReadingMeasure;
+    protected UnitofMeasureOpenEnum odometerReadingMeasure;
 
     /**
      * Gets the value of the odometerInd property.
@@ -108,7 +108,7 @@ public class OdometerInfoType
      *     {@link OdometerReadingCodeClosedEnumType }
      *     
      */
-    public OdometerReadingCodeClosedEnumType getOdometerReadingCode() {
+    public OdometerReadingCodeEnum getOdometerReadingCode() {
         return odometerReadingCode;
     }
 
@@ -120,7 +120,7 @@ public class OdometerInfoType
      *     {@link OdometerReadingCodeClosedEnumType }
      *     
      */
-    public void setOdometerReadingCode(OdometerReadingCodeClosedEnumType value) {
+    public void setOdometerReadingCode(OdometerReadingCodeEnum value) {
         this.odometerReadingCode = value;
     }
 
@@ -132,7 +132,7 @@ public class OdometerInfoType
      *     {@link UnitOfMeasureOpenEnumType }
      *     
      */
-    public UnitOfMeasureOpenEnumType getOdometerReadingMeasure() {
+    public UnitofMeasureOpenEnum getOdometerReadingMeasure() {
         return odometerReadingMeasure;
     }
 
@@ -144,7 +144,7 @@ public class OdometerInfoType
      *     {@link UnitOfMeasureOpenEnumType }
      *     
      */
-    public void setOdometerReadingMeasure(UnitOfMeasureOpenEnumType value) {
+    public void setOdometerReadingMeasure(UnitofMeasureOpenEnum value) {
         this.odometerReadingMeasure = value;
     }
 

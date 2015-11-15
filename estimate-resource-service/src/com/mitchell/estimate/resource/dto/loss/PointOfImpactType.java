@@ -49,7 +49,7 @@ public class PointOfImpactType
     @XmlElement(name = "POICode")
     protected String poiCode;
     @XmlElement(name = "POIDesc")
-    protected PointofImpactDescClosedEnumType poiDesc;
+    protected PointofImpactDescEnum poiDesc;
 
     /**
      * Gets the value of the poiCode property.
@@ -80,10 +80,10 @@ public class PointOfImpactType
      * 
      * @return
      *     possible object is
-     *     {@link PointofImpactDescClosedEnumType }
+     *     {@link PointofImpactDescEnum }
      *     
      */
-    public PointofImpactDescClosedEnumType getPOIDesc() {
+    public PointofImpactDescEnum getPOIDesc() {
         return poiDesc;
     }
 
@@ -92,10 +92,10 @@ public class PointOfImpactType
      * 
      * @param value
      *     allowed object is
-     *     {@link PointofImpactDescClosedEnumType }
+     *     {@link PointofImpactDescEnum }
      *     
      */
-    public void setPOIDesc(PointofImpactDescClosedEnumType value) {
+    public void setPOIDesc(PointofImpactDescEnum value) {
         this.poiDesc = value;
     }
 

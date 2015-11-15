@@ -46,7 +46,7 @@ public class OtherMemosType
 
     private final static long serialVersionUID = 20120730L;
     @XmlElement(name = "OtherMemoRef", required = true)
-    protected String otherMemoRef;
+    protected OtherMemoReferenceEnum otherMemoRef;
     @XmlElement(name = "OtherMemo", required = true)
     protected String otherMemo;
 
@@ -55,10 +55,10 @@ public class OtherMemosType
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link OtherMemoReferenceEnum }
      *     
      */
-    public String getOtherMemoRef() {
+    public OtherMemoReferenceEnum getOtherMemoRef() {
         return otherMemoRef;
     }
 
@@ -67,10 +67,10 @@ public class OtherMemosType
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link OtherMemoReferenceEnum }
      *     
      */
-    public void setOtherMemoRef(String value) {
+    public void setOtherMemoRef(OtherMemoReferenceEnum value) {
         this.otherMemoRef = value;
     }
 

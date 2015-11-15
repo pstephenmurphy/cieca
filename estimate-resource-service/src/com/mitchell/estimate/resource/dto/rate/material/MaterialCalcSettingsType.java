@@ -18,6 +18,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+import com.mitchell.estimate.resource.dto.damage.LaborOperationEnum;
+
 /**
  * <p>Java class for MaterialCalcSettingsType complex type.
  * 
@@ -52,24 +54,28 @@ public class MaterialCalcSettingsType
 {
 
     private final static long serialVersionUID = 20120730L;
+    
     @XmlElement(name = "CalcMethodCode", required = true)
-    protected String calcMethodCode;
+    protected CalculationMethodEnum calcMethodCode;
+    
     @XmlElement(name = "CalcMaxAmt")
     protected BigDecimal calcMaxAmt;
+    
     @XmlElement(name = "CalcMaxHours")
     protected BigDecimal calcMaxHours;
+    
     @XmlElement(name = "OperationInclCode")
-    protected List<LaborOperationClosedEnumType> operationInclCode;
+    protected List<LaborOperationEnum> operationInclCode;
 
     /**
      * Gets the value of the calcMethodCode property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link CalculationMethodEnum }
      *     
      */
-    public String getCalcMethodCode() {
+    public CalculationMethodEnum getCalcMethodCode() {
         return calcMethodCode;
     }
 
@@ -78,10 +84,10 @@ public class MaterialCalcSettingsType
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link CalculationMethodEnum }
      *     
      */
-    public void setCalcMethodCode(String value) {
+    public void setCalcMethodCode(CalculationMethodEnum value) {
         this.calcMethodCode = value;
     }
 
@@ -151,13 +157,13 @@ public class MaterialCalcSettingsType
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link LaborOperationClosedEnumType }
+     * {@link LaborOperationEnum }
      * 
      * 
      */
-    public List<LaborOperationClosedEnumType> getOperationInclCode() {
+    public List<LaborOperationEnum> getOperationInclCode() {
         if (operationInclCode == null) {
-            operationInclCode = new ArrayList<LaborOperationClosedEnumType>();
+            operationInclCode = new ArrayList<LaborOperationEnum>();
         }
         return this.operationInclCode;
     }

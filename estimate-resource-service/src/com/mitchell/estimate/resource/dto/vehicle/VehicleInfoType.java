@@ -18,10 +18,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.mitchell.estimate.resource.dto.attachment.FileAttachmentType;
-import com.mitchell.estimate.resource.dto.party.CustomElementType;
-import com.mitchell.estimate.resource.dto.vehicle.condition.CondType;
+import com.mitchell.estimate.resource.dto.vehicle.condition.ConditionType;
 import com.mitchell.estimate.resource.dto.vehicle.description.VehicleDescType;
 import com.mitchell.estimate.resource.dto.vehicle.license.LicenseType;
+import com.mitchell.estimate.resource.dto.vehicle.paint.PaintType;
 import com.mitchell.estimate.resource.dto.vehicle.power.PowerTrainType;
 import com.mitchell.estimate.resource.dto.vehicle.valuation.ValuationTypeType;
 import com.mitchell.estimate.resource.dto.vehicle.vin.VINInfoType;
@@ -93,7 +93,7 @@ public class VehicleInfoType implements Serializable
     @XmlElement(name = "Powertrain")
     protected PowerTrainType powertrain;
     @XmlElement(name = "Condition")
-    protected CondType condition;
+    protected ConditionType condition;
     @XmlElement(name = "Valuation")
     protected List<ValuationTypeType> valuation;
     @XmlElement(name = "VehicleMemo")
@@ -263,10 +263,10 @@ public class VehicleInfoType implements Serializable
      * 
      * @return
      *     possible object is
-     *     {@link CondType }
+     *     {@link ConditionType }
      *     
      */
-    public CondType getCondition() {
+    public ConditionType getCondition() {
         return condition;
     }
 
@@ -275,10 +275,10 @@ public class VehicleInfoType implements Serializable
      * 
      * @param value
      *     allowed object is
-     *     {@link CondType }
+     *     {@link ConditionType }
      *     
      */
-    public void setCondition(CondType value) {
+    public void setCondition(ConditionType value) {
         this.condition = value;
     }
 

@@ -46,7 +46,7 @@ public class DocumentVerType
 
     private final static long serialVersionUID = 20120730L;
     @XmlElement(name = "DocumentVerCode")
-    protected DocumentVersionClosedEnumType documentVerCode;
+    protected DocumentVersionEnum documentVerCode;
     @XmlElement(name = "DocumentVerNum")
     protected Integer documentVerNum;
 
@@ -55,10 +55,10 @@ public class DocumentVerType
      * 
      * @return
      *     possible object is
-     *     {@link DocumentVersionClosedEnumType }
+     *     {@link DocumentVersionEnum }
      *     
      */
-    public DocumentVersionClosedEnumType getDocumentVerCode() {
+    public DocumentVersionEnum getDocumentVerCode() {
         return documentVerCode;
     }
 
@@ -67,10 +67,10 @@ public class DocumentVerType
      * 
      * @param value
      *     allowed object is
-     *     {@link DocumentVersionClosedEnumType }
+     *     {@link DocumentVersionEnum }
      *     
      */
-    public void setDocumentVerCode(DocumentVersionClosedEnumType value) {
+    public void setDocumentVerCode(DocumentVersionEnum value) {
         this.documentVerCode = value;
     }
 

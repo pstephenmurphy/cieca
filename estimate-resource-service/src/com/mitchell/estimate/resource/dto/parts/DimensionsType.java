@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-import com.mitchell.estimate.resource.dto.vehicle.UnitOfMeasureOpenEnumType;
+import com.mitchell.estimate.resource.dto.vehicle.UnitofMeasureOpenEnum;
 
 /**
  * <p>Java class for DimensionsType complex type.
@@ -58,7 +58,7 @@ public class DimensionsType implements Serializable
     @XmlElement(name = "Height", required = true)
     protected BigDecimal height;
     @XmlElement(name = "UnitOfMeasure", required = true)
-    protected UnitOfMeasureOpenEnumType unitOfMeasure;
+    protected UnitofMeasureOpenEnum unitOfMeasure;
 
     /**
      * Gets the value of the length property.
@@ -137,10 +137,10 @@ public class DimensionsType implements Serializable
      * 
      * @return
      *     possible object is
-     *     {@link UnitOfMeasureOpenEnumType }
+     *     {@link UnitofMeasureOpenEnum }
      *     
      */
-    public UnitOfMeasureOpenEnumType getUnitOfMeasure() {
+    public UnitofMeasureOpenEnum getUnitOfMeasure() {
         return unitOfMeasure;
     }
 
@@ -149,10 +149,10 @@ public class DimensionsType implements Serializable
      * 
      * @param value
      *     allowed object is
-     *     {@link UnitOfMeasureOpenEnumType }
+     *     {@link UnitofMeasureOpenEnum }
      *     
      */
-    public void setUnitOfMeasure(UnitOfMeasureOpenEnumType value) {
+    public void setUnitOfMeasure(UnitofMeasureOpenEnum value) {
         this.unitOfMeasure = value;
     }
 

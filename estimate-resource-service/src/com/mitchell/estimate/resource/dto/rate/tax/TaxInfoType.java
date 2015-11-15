@@ -48,22 +48,25 @@ public class TaxInfoType implements Serializable
 {
 
     private final static long serialVersionUID = 20120730L;
+    
     @XmlElement(name = "TaxType", required = true)
-    protected TaxTypeClosedEnumType taxType;
+    protected TaxTypeEnum taxType;
+    
     @XmlElement(name = "TaxableInd")
     protected boolean taxableInd;
+    
     @XmlElement(name = "TaxTierInfo")
-    protected List<TierInfoType> taxTierInfo;
+    protected List<RateTierInfoType> taxTierInfo;
 
     /**
      * Gets the value of the taxType property.
      * 
      * @return
      *     possible object is
-     *     {@link TaxTypeClosedEnumType }
+     *     {@link TaxTypeEnum }
      *     
      */
-    public TaxTypeClosedEnumType getTaxType() {
+    public TaxTypeEnum getTaxType() {
         return taxType;
     }
 
@@ -72,10 +75,10 @@ public class TaxInfoType implements Serializable
      * 
      * @param value
      *     allowed object is
-     *     {@link TaxTypeClosedEnumType }
+     *     {@link TaxTypeEnum }
      *     
      */
-    public void setTaxType(TaxTypeClosedEnumType value) {
+    public void setTaxType(TaxTypeEnum value) {
         this.taxType = value;
     }
 
@@ -113,13 +116,13 @@ public class TaxInfoType implements Serializable
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link TierInfoType }
+     * {@link RateTierInfoType }
      * 
      * 
      */
-    public List<TierInfoType> getTaxTierInfo() {
+    public List<RateTierInfoType> getTaxTierInfo() {
         if (taxTierInfo == null) {
-            taxTierInfo = new ArrayList<TierInfoType>();
+            taxTierInfo = new ArrayList<RateTierInfoType>();
         }
         return this.taxTierInfo;
     }

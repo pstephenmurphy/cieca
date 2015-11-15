@@ -9,7 +9,6 @@
 package com.mitchell.estimate.resource.dto.profile;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,7 +57,6 @@ import com.mitchell.estimate.resource.dto.rate.tax.CanadianTaxType;
     "undersideTimeInd",
     "virCompletedInd",
     "bettermentInd",
-    "refinishCalcSettings",
     "canadianTax"
 })
 public class ProfileInfoType
@@ -66,24 +64,31 @@ public class ProfileInfoType
 {
 
     private final static long serialVersionUID = 20120730L;
+    
     @XmlElement(name = "ProfileName")
     protected String profileName;
+    
     @XmlElement(name = "RateInfo", required = true)
     protected List<RateInfoType> rateInfo;
+    
     @XmlElement(name = "CostPlusBasisInd")
     protected Boolean costPlusBasisInd;
+    
     @XmlElement(name = "DrillTimeInd")
     protected Boolean drillTimeInd;
+    
     @XmlElement(name = "EdgingTimeInd")
     protected Boolean edgingTimeInd;
+    
     @XmlElement(name = "UndersideTimeInd")
     protected Boolean undersideTimeInd;
+    
     @XmlElement(name = "VIRCompletedInd")
     protected Boolean virCompletedInd;
+    
     @XmlElement(name = "BettermentInd")
     protected Boolean bettermentInd;
-    @XmlElement(name = "PreTaxDiscountRate")
-    protected BigDecimal preTaxDiscountRate;
+    
     @XmlElement(name = "CanadianTax")
     protected CanadianTaxType canadianTax;
 
@@ -282,30 +287,6 @@ public class ProfileInfoType
      */
     public void setBettermentInd(Boolean value) {
         this.bettermentInd = value;
-    }
-
-    /**
-     * Gets the value of the preTaxDiscountRate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getPreTaxDiscountRate() {
-        return preTaxDiscountRate;
-    }
-
-    /**
-     * Sets the value of the preTaxDiscountRate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setPreTaxDiscountRate(BigDecimal value) {
-        this.preTaxDiscountRate = value;
     }
 
     /**

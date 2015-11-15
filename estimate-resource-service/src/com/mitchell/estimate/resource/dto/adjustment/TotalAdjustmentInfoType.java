@@ -16,21 +16,17 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for TotalAdjustmentInfoType complex type.
+ * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TotalAdjustmentInfoType">
+ * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="AdjustmentType" type="{http://www.cieca.com/BMS}AdjustmentTypeClosedEnumType"/>
- *         &lt;element name="AdjustmentCategory" type="{http://www.cieca.com/BMS}AdjustmentCategoryClosedEnumType" minOccurs="0"/>
- *         &lt;element name="AdjustmentDesc" type="{http://www.cieca.com/BMS}Char_256" minOccurs="0"/>
- *         &lt;element name="AdjustmentMethod" type="{http://www.cieca.com/BMS}AdjustmentMethodClosedEnumType" minOccurs="0"/>
+ *         &lt;element name="AdjustmentType" type="{http://www.cieca.com/BMS}AdjustmentTypeEnum"/>
  *         &lt;element name="NonTaxAdjustmentAmt" type="{http://www.cieca.com/BMS}Currency" minOccurs="0"/>
  *         &lt;element name="TaxAdjustmentAmt" type="{http://www.cieca.com/BMS}Currency" minOccurs="0"/>
  *         &lt;element name="TotalAdjustmentAmt" type="{http://www.cieca.com/BMS}Currency"/>
@@ -45,9 +41,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TotalAdjustmentInfoType", propOrder = {
     "adjustmentType",
-    "adjustmentCategory",
-    "adjustmentDesc",
-    "adjustmentMethod",
     "nonTaxAdjustmentAmt",
     "taxAdjustmentAmt",
     "totalAdjustmentAmt"
@@ -56,15 +49,9 @@ public class TotalAdjustmentInfoType
     implements Serializable
 {
 
-    private final static long serialVersionUID = 20120730L;
+    private final static long serialVersionUID = 20120208L;
     @XmlElement(name = "AdjustmentType", required = true)
-    protected AdjustmentTypeClosedEnumType adjustmentType;
-    @XmlElement(name = "AdjustmentCategory")
-    protected AdjustmentCategoryClosedEnumType adjustmentCategory;
-    @XmlElement(name = "AdjustmentDesc")
-    protected String adjustmentDesc;
-    @XmlElement(name = "AdjustmentMethod")
-    protected AdjustmentMethodClosedEnumType adjustmentMethod;
+    protected AdjustmentTypeEnum adjustmentType;
     @XmlElement(name = "NonTaxAdjustmentAmt")
     protected BigDecimal nonTaxAdjustmentAmt;
     @XmlElement(name = "TaxAdjustmentAmt")
@@ -77,10 +64,10 @@ public class TotalAdjustmentInfoType
      * 
      * @return
      *     possible object is
-     *     {@link AdjustmentTypeClosedEnumType }
+     *     {@link AdjustmentTypeEnum }
      *     
      */
-    public AdjustmentTypeClosedEnumType getAdjustmentType() {
+    public AdjustmentTypeEnum getAdjustmentType() {
         return adjustmentType;
     }
 
@@ -89,83 +76,11 @@ public class TotalAdjustmentInfoType
      * 
      * @param value
      *     allowed object is
-     *     {@link AdjustmentTypeClosedEnumType }
+     *     {@link AdjustmentTypeEnum }
      *     
      */
-    public void setAdjustmentType(AdjustmentTypeClosedEnumType value) {
+    public void setAdjustmentType(AdjustmentTypeEnum value) {
         this.adjustmentType = value;
-    }
-
-    /**
-     * Gets the value of the adjustmentCategory property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link AdjustmentCategoryClosedEnumType }
-     *     
-     */
-    public AdjustmentCategoryClosedEnumType getAdjustmentCategory() {
-        return adjustmentCategory;
-    }
-
-    /**
-     * Sets the value of the adjustmentCategory property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AdjustmentCategoryClosedEnumType }
-     *     
-     */
-    public void setAdjustmentCategory(AdjustmentCategoryClosedEnumType value) {
-        this.adjustmentCategory = value;
-    }
-
-    /**
-     * Gets the value of the adjustmentDesc property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAdjustmentDesc() {
-        return adjustmentDesc;
-    }
-
-    /**
-     * Sets the value of the adjustmentDesc property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAdjustmentDesc(String value) {
-        this.adjustmentDesc = value;
-    }
-
-    /**
-     * Gets the value of the adjustmentMethod property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link AdjustmentMethodClosedEnumType }
-     *     
-     */
-    public AdjustmentMethodClosedEnumType getAdjustmentMethod() {
-        return adjustmentMethod;
-    }
-
-    /**
-     * Sets the value of the adjustmentMethod property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AdjustmentMethodClosedEnumType }
-     *     
-     */
-    public void setAdjustmentMethod(AdjustmentMethodClosedEnumType value) {
-        this.adjustmentMethod = value;
     }
 
     /**
