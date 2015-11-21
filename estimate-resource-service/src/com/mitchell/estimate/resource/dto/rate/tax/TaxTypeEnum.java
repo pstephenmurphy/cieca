@@ -78,8 +78,7 @@ public enum TaxTypeEnum {
     MA("MA"),
     MP("MP"),
     MS("MS"),
-    @XmlEnumValue("O2")
-    O_2("O2"),
+    O2("O2"),
     OH("OH"),
     PG("PG"),
     PS("PS"),
@@ -89,12 +88,11 @@ public enum TaxTypeEnum {
     SS("SS"),
     ST("ST"),
     SU("SU"),
-    @XmlEnumValue("T1")
-    T_1("T1"),
-    @XmlEnumValue("T2")
-    T_2("T2"),
+    T1("T1"),
+    T2("T2"),
     TL("TL"),
     TX("TX");
+    
     private final String value;
 
     TaxTypeEnum(String v) {

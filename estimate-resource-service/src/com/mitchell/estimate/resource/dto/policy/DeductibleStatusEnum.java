@@ -41,13 +41,12 @@ public enum DeductibleStatusEnum {
     FK("FK"),
     DX("DX"),
     AV("AV"),
-    @XmlEnumValue("B7")
-    B_7("B7"),
-    @XmlEnumValue("D2")
-    D_2("D2"),
+    B7("B7"),
+    D2("D2"),
     PH("PH"),
     SB("SB"),
     ZZ("ZZ");
+	
     private final String value;
 
     DeductibleStatusEnum(String v) {

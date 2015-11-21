@@ -34,11 +34,12 @@ import javax.xml.bind.annotation.XmlType;
 public enum PayerTypeEnum {
 
     @XmlEnumValue("47")
-    VALUE_1("47"),
+    ESTIMATOR("47"),
     @XmlEnumValue("2B")
-    VALUE_2("2B"),
+    THIRD_PARTY_ADMINISTRATOR("2B"),
     @XmlEnumValue("IP")
-    VALUE_3("IP");
+    INDEPENDENT_APPRAISER("IP");
+    
     private final String value;
 
     PayerTypeEnum(String v) {

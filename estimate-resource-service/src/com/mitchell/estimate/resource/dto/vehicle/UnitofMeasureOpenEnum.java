@@ -65,11 +65,11 @@ public enum UnitofMeasureOpenEnum {
     LT("LT"),
     ML("ML"),
     MO("MO"),
-    @XmlEnumValue("P1")
-    P_1("P1"),
+    P1("P1"),
     PT("PT"),
     QT("QT"),
     WK("WK");
+    
     private final String value;
 
     UnitofMeasureOpenEnum(String v) {

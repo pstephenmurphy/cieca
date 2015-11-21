@@ -138,219 +138,220 @@ import javax.xml.bind.annotation.XmlType;
 public enum NamePrefixEnum {
 
     @XmlEnumValue("1LT")
-    VALUE_1("1LT"),
+    FIRST_LT_1("1LT"),
     @XmlEnumValue("1SG")
-    VALUE_2("1SG"),
+    FIRST_SG_1("1SG"),
     @XmlEnumValue("1ST LT")
-    VALUE_3("1ST LT"),
+    FIRST_LT_2("1ST LT"),
     @XmlEnumValue("1ST SGT")
-    VALUE_4("1ST SGT"),
+    FIRST_SG_2("1ST SGT"),
     @XmlEnumValue("2LT")
-    VALUE_5("2LT"),
+    SECOND_LT_1("2LT"),
     @XmlEnumValue("2ND LT")
-    VALUE_6("2ND LT"),
+    SECOND_LT_2("2ND LT"),
     @XmlEnumValue("A1C")
-    VALUE_7("A1C"),
+    A1C("A1C"),
     @XmlEnumValue("AB")
-    VALUE_8("AB"),
+    AB("AB"),
     @XmlEnumValue("ADM")
-    VALUE_9("ADM"),
+    ADM("ADM"),
     @XmlEnumValue("AMN")
-    VALUE_10("AMN"),
+    AMN("AMN"),
     @XmlEnumValue("AN")
-    VALUE_11("AN"),
+    AN("AN"),
     @XmlEnumValue("AVCAD")
-    VALUE_12("AVCAD"),
+    AVCAD("AVCAD"),
     @XmlEnumValue("B GEN")
-    VALUE_13("B GEN"),
+    BRIG_GEN_1("B GEN"),
     @XmlEnumValue("BG")
-    VALUE_14("BG"),
+    BRIG_GEN_2("BG"),
     @XmlEnumValue("BRIG GEN")
-    VALUE_15("BRIG GEN"),
+    BRIG_GEN_3("BRIG GEN"),
     @XmlEnumValue("CADET")
-    VALUE_16("CADET"),
+    CADET("CADET"),
     @XmlEnumValue("CAPT")
-    VALUE_17("CAPT"),
+    CAPT("CAPT"),
     @XmlEnumValue("CDR")
-    VALUE_18("CDR"),
+    CDR("CDR"),
     @XmlEnumValue("CMSAF")
-    VALUE_19("CMSAF"),
+    CMSAF("CMSAF"),
     @XmlEnumValue("CMSGT")
-    VALUE_20("CMSGT"),
+    CMSGT("CMSGT"),
     @XmlEnumValue("CN")
-    VALUE_21("CN"),
+    CN("CN"),
     @XmlEnumValue("COL")
-    VALUE_22("COL"),
+    COL("COL"),
     @XmlEnumValue("COMO")
-    VALUE_23("COMO"),
+    COMO("COMO"),
     @XmlEnumValue("CPL")
-    VALUE_24("CPL"),
+    CPL("CPL"),
     @XmlEnumValue("CPO")
-    VALUE_25("CPO"),
+    CPO("CPO"),
     @XmlEnumValue("CPT")
-    VALUE_26("CPT"),
+    CPT("CPT"),
     @XmlEnumValue("CSM")
-    VALUE_27("CSM"),
+    CSM("CSM"),
     @XmlEnumValue("CW2")
-    VALUE_28("CW2"),
+    CW2("CW2"),
     @XmlEnumValue("CW3")
-    VALUE_29("CW3"),
+    CW3("CW3"),
     @XmlEnumValue("CW4")
-    VALUE_30("CW4"),
+    CW4("CW4"),
     @XmlEnumValue("CW5")
-    VALUE_31("CW5"),
+    CW5("CW5"),
     @XmlEnumValue("CWO")
-    VALUE_32("CWO"),
+    CWO("CWO"),
     @XmlEnumValue("CWO2")
-    VALUE_33("CWO2"),
+    CWO2("CWO2"),
     @XmlEnumValue("CWO3")
-    VALUE_34("CWO3"),
+    CWO3("CWO3"),
     @XmlEnumValue("CWO4")
-    VALUE_35("CWO4"),
+    CWO4("CWO4"),
     @XmlEnumValue("CWO5")
-    VALUE_36("CWO5"),
+    CWO5("CWO5"),
     @XmlEnumValue("DN")
-    VALUE_37("DN"),
+    DN("DN"),
     @XmlEnumValue("Dr")
-    VALUE_38("Dr"),
+    DR("Dr"),
     @XmlEnumValue("ENS")
-    VALUE_39("ENS"),
+    ENS("ENS"),
     @XmlEnumValue("ENSIGN")
-    VALUE_40("ENSIGN"),
+    ENSIGN("ENSIGN"),
     @XmlEnumValue("FADM")
-    VALUE_41("FADM"),
+    FADM("FADM"),
     @XmlEnumValue("FN")
-    VALUE_42("FN"),
+    FN("FN"),
     @XmlEnumValue("GA")
-    VALUE_43("GA"),
+    GA("GA"),
     @XmlEnumValue("GAF")
-    VALUE_44("GAF"),
+    GAF("GAF"),
     @XmlEnumValue("GEN")
-    VALUE_45("GEN"),
+    GEN("GEN"),
     @XmlEnumValue("GYSGT")
-    VALUE_46("GYSGT"),
+    GYSGT("GYSGT"),
     @XmlEnumValue("HC")
-    VALUE_47("HC"),
+    HC("HC"),
     @XmlEnumValue("HN")
-    VALUE_48("HN"),
+    HN("HN"),
     @XmlEnumValue("LCDR")
-    VALUE_49("LCDR"),
+    LCDR("LCDR"),
     @XmlEnumValue("LCPL")
-    VALUE_50("LCPL"),
+    LCPL("LCPL"),
     @XmlEnumValue("LT")
-    VALUE_51("LT"),
+    LT("LT"),
     @XmlEnumValue("LT COL")
-    VALUE_52("LT COL"),
+    LT_COL("LT COL"),
     @XmlEnumValue("LT GEN")
-    VALUE_53("LT GEN"),
+    LT_GEN("LT GEN"),
     @XmlEnumValue("LTC")
-    VALUE_54("LTC"),
+    LTC("LTC"),
     @XmlEnumValue("LTG")
-    VALUE_55("LTG"),
+    LTG("LTG"),
     @XmlEnumValue("LTJG")
-    VALUE_56("LTJG"),
+    LTJG("LTJG"),
     @XmlEnumValue("MAJ")
-    VALUE_57("MAJ"),
+    MAJ("MAJ"),
     @XmlEnumValue("MAJ GEN")
-    VALUE_58("MAJ GEN"),
+    MAJ_GEN("MAJ GEN"),
     @XmlEnumValue("MCPO")
-    VALUE_59("MCPO"),
+    MCPO("MCPO"),
     @XmlEnumValue("MCPOCG")
-    VALUE_60("MCPOCG"),
+    MCPOCG("MCPOCG"),
     @XmlEnumValue("MCPON")
-    VALUE_61("MCPON"),
+    MCPON("MCPON"),
     @XmlEnumValue("MG")
-    VALUE_62("MG"),
+    MG("MG"),
     @XmlEnumValue("MGYSGT")
-    VALUE_63("MGYSGT"),
+    MGYSGT("MGYSGT"),
     @XmlEnumValue("MIDN")
-    VALUE_64("MIDN"),
+    MIDN("MIDN"),
     @XmlEnumValue("Miss")
-    VALUE_65("Miss"),
+    MISS("Miss"),
     @XmlEnumValue("Mr")
-    VALUE_66("Mr"),
+    MR("Mr"),
     @XmlEnumValue("Mrs")
-    VALUE_67("Mrs"),
+    MRS("Mrs"),
     @XmlEnumValue("Ms")
-    VALUE_68("Ms"),
+    MS("Ms"),
     @XmlEnumValue("MSG")
-    VALUE_69("MSG"),
+    MSG("MSG"),
     @XmlEnumValue("MSGT")
-    VALUE_70("MSGT"),
+    MSGT("MSGT"),
     @XmlEnumValue("MWO")
-    VALUE_71("MWO"),
+    MWO("MWO"),
     @XmlEnumValue("OC")
-    VALUE_72("OC"),
+    OC("OC"),
     @XmlEnumValue("OT")
-    VALUE_73("OT"),
+    OT("OT"),
     @XmlEnumValue("PFC")
-    VALUE_74("PFC"),
+    PFC("PFC"),
     @XmlEnumValue("PO1")
-    VALUE_75("PO1"),
+    PO1("PO1"),
     @XmlEnumValue("PO2")
-    VALUE_76("PO2"),
+    PO2("PO2"),
     @XmlEnumValue("PO3")
-    VALUE_77("PO3"),
+    PO3("PO3"),
     @XmlEnumValue("PSG")
-    VALUE_78("PSG"),
+    PSG("PSG"),
     @XmlEnumValue("PV2")
-    VALUE_79("PV2"),
+    PV2("PV2"),
     @XmlEnumValue("PVT")
-    VALUE_80("PVT"),
+    PVT("PVT"),
     @XmlEnumValue("RADM")
-    VALUE_81("RADM"),
+    RADM("RADM"),
     @XmlEnumValue("RDML")
-    VALUE_82("RDML"),
+    RDML("RDML"),
     @XmlEnumValue("Rev")
-    VALUE_83("Rev"),
+    REV("Rev"),
     @XmlEnumValue("SA")
-    VALUE_84("SA"),
+    SA("SA"),
     @XmlEnumValue("SCPO")
-    VALUE_85("SCPO"),
+    SCPO("SCPO"),
     @XmlEnumValue("SFC")
-    VALUE_86("SFC"),
+    SFC("SFC"),
     @XmlEnumValue("SGM")
-    VALUE_87("SGM"),
+    SGM("SGM"),
     @XmlEnumValue("SGT")
-    VALUE_88("SGT"),
+    SGT("SGT"),
     @XmlEnumValue("SGTMAJ")
-    VALUE_89("SGTMAJ"),
+    SGTMAJ("SGTMAJ"),
     @XmlEnumValue("SGTMAJMC")
-    VALUE_90("SGTMAJMC"),
+    SGTMAJMC("SGTMAJMC"),
     @XmlEnumValue("SMA")
-    VALUE_91("SMA"),
+    SMA("SMA"),
     @XmlEnumValue("SMSGT")
-    VALUE_92("SMSGT"),
+    SMSGT("SMSGT"),
     @XmlEnumValue("SN")
-    VALUE_93("SN"),
+    SN("SN"),
     @XmlEnumValue("SP4")
-    VALUE_94("SP4"),
+    SP4("SP4"),
     @XmlEnumValue("SP5")
-    VALUE_95("SP5"),
+    SP5("SP5"),
     @XmlEnumValue("SP6")
-    VALUE_96("SP6"),
+    SP6("SP6"),
     @XmlEnumValue("SP7")
-    VALUE_97("SP7"),
+    SP7("SP7"),
     @XmlEnumValue("SPC")
-    VALUE_98("SPC"),
+    SPC("SPC"),
     @XmlEnumValue("SR")
-    VALUE_99("SR"),
+    SR("SR"),
     @XmlEnumValue("SRA")
-    VALUE_100("SRA"),
+    SRA("SRA"),
     @XmlEnumValue("SSG")
-    VALUE_101("SSG"),
+    SSG("SSG"),
     @XmlEnumValue("SSGT")
-    VALUE_102("SSGT"),
+    SSGT("SSGT"),
     @XmlEnumValue("TSGT")
-    VALUE_103("TSGT"),
+    TSGT("TSGT"),
     @XmlEnumValue("VADM")
-    VALUE_104("VADM"),
+    VADM("VADM"),
     @XmlEnumValue("WO")
-    VALUE_105("WO"),
+    WO("WO"),
     @XmlEnumValue("WO1")
-    VALUE_106("WO1"),
+    WO1("WO1"),
     @XmlEnumValue("WOC")
-    VALUE_107("WOC");
+    WOC("WOC");
+    
     private final String value;
 
     NamePrefixEnum(String v) {

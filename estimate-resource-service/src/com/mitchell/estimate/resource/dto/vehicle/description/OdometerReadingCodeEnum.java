@@ -48,6 +48,7 @@ public enum OdometerReadingCodeEnum {
     INACCESSIBLE("Inaccessible"),
     @XmlEnumValue("Exempt")
     EXEMPT("Exempt");
+    
     private final String value;
 
     OdometerReadingCodeEnum(String v) {

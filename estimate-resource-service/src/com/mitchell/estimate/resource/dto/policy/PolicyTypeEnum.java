@@ -34,11 +34,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum PolicyTypeEnum {
 
-    @XmlEnumValue("C1")
-    C_1("C1"),
+    C1("C1"),
     OT("OT"),
     PE("PE"),
     PL("PL");
+	
     private final String value;
 
     PolicyTypeEnum(String v) {

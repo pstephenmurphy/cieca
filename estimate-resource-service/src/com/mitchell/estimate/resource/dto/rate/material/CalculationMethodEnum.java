@@ -35,13 +35,14 @@ import javax.xml.bind.annotation.XmlType;
 public enum CalculationMethodEnum {
 
     @XmlEnumValue("1")
-    VALUE_1("1"),
+    CALCULATE_PERCENT_MATERIAL_TYPE_DOLLARS("1"),
     @XmlEnumValue("2")
-    VALUE_2("2"),
+    RATE_THRESHOLD_OF_TOTAL_HOURS("2"),
     @XmlEnumValue("3")
-    VALUE_3("3"),
+    RATE_THRESHOLD_TABLE_HOURS("3"),
     @XmlEnumValue("4")
-    VALUE_4("4");
+    RATE("4");
+    
     private final String value;
 
     CalculationMethodEnum(String v) {

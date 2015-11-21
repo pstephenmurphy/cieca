@@ -52,47 +52,48 @@ import javax.xml.bind.annotation.XmlType;
 public enum TotalSubTypeEnum {
 
     @XmlEnumValue("1")
-    VALUE_1("1"),
+    LINE_ITEM_TOTAL("1"),
     @XmlEnumValue("18")
-    VALUE_2("18"),
+    PREPAID_ITEMS_AMOUNT("18"),
     @XmlEnumValue("AAH")
-    VALUE_3("AAH"),
+    REPLACEMENT_AMOUNT("AAH"),
     @XmlEnumValue("BM")
-    VALUE_4("BM"),
+    ADJUSTMENT("BM"),
     @XmlEnumValue("BTR")
-    VALUE_5("BTR"),
+    BETTERMENT("BTR"),
     @XmlEnumValue("CA")
-    VALUE_6("CA"),
+    CORE_ADJUSTMENT("CA"),
     @XmlEnumValue("CC")
-    VALUE_7("CC"),
+    CORE_CHARGE("CC"),
     @XmlEnumValue("CE")
-    VALUE_8("CE"),
+    SUMMARY_AMOUNT("CE"),
     @XmlEnumValue("D2")
-    VALUE_9("D2"),
+    DEDUCTIBLE_AMOUNT("D2"),
     @XmlEnumValue("D8")
-    VALUE_10("D8"),
+    DISCOUNT_AMOUNT("D8"),
     @XmlEnumValue("ECT")
-    VALUE_11("ECT"),
+    SUBTOTAL("ECT"),
     @XmlEnumValue("F7")
-    VALUE_12("F7"),
+    SALES_TAX("F7"),
     @XmlEnumValue("M8")
-    VALUE_13("M8"),
+    MARKUP_AMOUNT("M8"),
     @XmlEnumValue("ML")
-    VALUE_14("ML"),
+    PRIOR_NET_INVOICE_TOTAL("ML"),
     @XmlEnumValue("N")
-    VALUE_15("N"),
+    NET("N"),
     @XmlEnumValue("PN")
-    VALUE_16("PN"),
+    PRIOR_GROSS_INVOICE_TOTAL("PN"),
     @XmlEnumValue("RP")
-    VALUE_17("RP"),
+    REPAIR("RP"),
     @XmlEnumValue("SM")
-    VALUE_18("SM"),
+    SUPPLEMENTAL("SM"),
     @XmlEnumValue("T")
-    VALUE_19("T"),
+    TAX("T"),
     @XmlEnumValue("T2")
-    VALUE_20("T2"),
+    TOTAL_CLAIM_BEFORE_TAXES("T2"),
     @XmlEnumValue("TT")
-    VALUE_21("TT");
+    TOTAL_TRANSACTION_AMOUNT("TT");
+    
     private final String value;
 
     TotalSubTypeEnum(String v) {

@@ -147,20 +147,13 @@ public enum RateTypeEnum {
     BESL("BESL"),
     BETP("BETP"),
     LA("LA"),
-    @XmlEnumValue("LA1")
-    LA_1("LA1"),
-    @XmlEnumValue("LA2")
-    LA_2("LA2"),
-    @XmlEnumValue("LA2S")
-    LA_2_S("LA2S"),
-    @XmlEnumValue("LA2U")
-    LA_2_U("LA2U"),
-    @XmlEnumValue("LA3")
-    LA_3("LA3"),
-    @XmlEnumValue("LA3S")
-    LA_3_S("LA3S"),
-    @XmlEnumValue("LA4")
-    LA_4("LA4"),
+    LA1("LA1"),
+    LA2("LA2"),
+    LA2S("LA2S"),
+    LA2U("LA2U"),
+    LA3("LA3"),
+    LA3S("LA3S"),
+    LA4("LA4"),
     LAB("LAB"),
     LABA("LABA"),
     LABS("LABS"),
@@ -168,8 +161,7 @@ public enum RateTypeEnum {
     LAD("LAD"),
     LADT("LADT"),
     LAE("LAE"),
-    @XmlEnumValue("LAE2")
-    LAE_2("LAE2"),
+    LAE2("LAE2"),
     LAET("LAET"),
     LAF("LAF"),
     LAFA("LAFA"),
@@ -192,12 +184,9 @@ public enum RateTypeEnum {
     LATT("LATT"),
     LAU("LAU"),
     LAUT("LAUT"),
-    @XmlEnumValue("MA2S")
-    MA_2_S("MA2S"),
-    @XmlEnumValue("MA2T")
-    MA_2_T("MA2T"),
-    @XmlEnumValue("MA3S")
-    MA_3_S("MA3S"),
+    MA2S("MA2S"),
+    MA2T("MA2T"),
+    MA3S("MA3S"),
     MABL("MABL"),
     MACS("MACS"),
     MAHW("MAHW"),
@@ -205,14 +194,10 @@ public enum RateTypeEnum {
     MASH("MASH"),
     MAT("MAT"),
     MATD("MATD"),
-    @XmlEnumValue("OT1")
-    OT_1("OT1"),
-    @XmlEnumValue("OT2")
-    OT_2("OT2"),
-    @XmlEnumValue("OT3")
-    OT_3("OT3"),
-    @XmlEnumValue("OT4")
-    OT_4("OT4"),
+    OT1("OT1"),
+    OT2("OT2"),
+    OT3("OT3"),
+    OT4("OT4"),
     OTA("OTA"),
     OTAC("OTAC"),
     OTBE("OTBE"),
@@ -250,12 +235,10 @@ public enum RateTypeEnum {
     PAR("PAR"),
     PASL("PASL"),
     PAT("PAT"),
-    @XmlEnumValue("PAX1")
-    PAX_1("PAX1"),
-    @XmlEnumValue("PAX2")
-    PAX_2("PAX2"),
-    @XmlEnumValue("PAX3")
-    PAX_3("PAX3");
+    PAX1("PAX1"),
+    PAX2("PAX2"),
+    PAX3("PAX3");
+    
     private final String value;
 
     RateTypeEnum(String v) {

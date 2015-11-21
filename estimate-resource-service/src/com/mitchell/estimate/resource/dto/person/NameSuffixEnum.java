@@ -54,6 +54,7 @@ public enum NameSuffixEnum {
     VII("VII"),
     VIII("VIII"),
     IX("IX");
+    
     private final String value;
 
     NameSuffixEnum(String v) {

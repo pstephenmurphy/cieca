@@ -77,7 +77,7 @@ public enum LicensePlateTypeEnum {
     OL("OL"),
     PC("PC"),
     @XmlEnumValue("S1")
-    S_1("S1"),
+    S1("S1"),
     SN("SN"),
     ST("ST"),
     SV("SV"),
@@ -91,6 +91,7 @@ public enum LicensePlateTypeEnum {
     UV("UV"),
     VN("VN"),
     RV("RV");
+    
     private final String value;
 
     LicensePlateTypeEnum(String v) {

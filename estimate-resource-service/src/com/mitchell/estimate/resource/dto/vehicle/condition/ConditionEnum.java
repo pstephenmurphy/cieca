@@ -40,10 +40,11 @@ public enum ConditionEnum {
     FR("FR"),
     GO("GO"),
     @XmlEnumValue("L8")
-    L_8("L8"),
+    L8("L8"),
     @XmlEnumValue("L9")
-    L_9("L9"),
+    L9("L9"),
     PR("PR");
+    
     private final String value;
 
     ConditionEnum(String v) {
