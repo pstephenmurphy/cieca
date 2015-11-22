@@ -58,59 +58,60 @@ import javax.xml.bind.annotation.XmlType;
 public enum LaborOperationEnum {
 
     @XmlEnumValue("OP0")
-    OP_0("OP0"),
+    BLANK("OP0"),
     @XmlEnumValue("OP1")
-    OP_1("OP1"),
+    REFINISH_REPAIR("OP1"),
     @XmlEnumValue("OP2")
-    OP_2("OP2"),
+    REMOVE_Install("OP2"),
     @XmlEnumValue("OP3")
-    OP_3("OP3"),
+    ADDITIONAL_REPAIR("OP3"),
     @XmlEnumValue("OP4")
-    OP_4("OP4"),
+    ALIGNMENT("OP4"),
     @XmlEnumValue("OP5")
-    OP_5("OP5"),
+    OVERHAUL("OP5"),
     @XmlEnumValue("OP6")
-    OP_6("OP6"),
+    REFINISH("OP6"),
     @XmlEnumValue("OP7")
-    OP_7("OP7"),
+    INSPECT("OP7"),
     @XmlEnumValue("OP8")
-    OP_8("OP8"),
+    CHECK_ADJUST("OP8"),
     @XmlEnumValue("OP9")
-    OP_9("OP9"),
+    REPAIR("OP9"),
     @XmlEnumValue("OP10")
-    OP_10("OP10"),
+    REPAIR_PARTIAL("OP10"),
     @XmlEnumValue("OP11")
-    OP_11("OP11"),
+    REMOVE_REPLACE("OP11"),
     @XmlEnumValue("OP12")
-    OP_12("OP12"),
+    REMOVE_REPLACE_PARTIAL("OP12"),
     @XmlEnumValue("OP13")
-    OP_13("OP13"),
+    ADDITIONAL_COSTS("OP13"),
     @XmlEnumValue("OP14")
-    OP_14("OP14"),
+    ADDITIONAL_OPERATIONS("OP14"),
     @XmlEnumValue("OP15")
-    OP_15("OP15"),
+    BLEND("OP15"),
     @XmlEnumValue("OP16")
-    OP_16("OP16"),
+    SUBLET("OP16"),
     @XmlEnumValue("OP17")
-    OP_17("OP17"),
+    RELATED_PRIOR_DAMAGE("OP17"),
     @XmlEnumValue("OP18")
-    OP_18("OP18"),
+    APPEARANCE_ALLOWANCE("OP18"),
     @XmlEnumValue("OP19")
-    OP_19("OP19"),
+    UNRELATED_PRIOR_DAMAGE("OP19"),
     @XmlEnumValue("OP20")
-    OP_20("OP20"),
+    REMOVE_AND_Reinstall("OP20"),
     @XmlEnumValue("OP21")
-    OP_21("OP21"),
+    REMOVE_AND_REPAIR("OP21"),
     @XmlEnumValue("OP22")
-    OP_22("OP22"),
+    REPAIR_FIRST_ELSE_REPLACE("OP22"),
     @XmlEnumValue("OP23")
-    OP_23("OP23"),
+    REDO("OP23"),
     @XmlEnumValue("OP24")
-    OP_24("OP24"),
+    CHIP_GUARD("OP24"),
     @XmlEnumValue("OP25")
-    OP_25("OP25"),
+    TWO_TONE("OP25"),
     @XmlEnumValue("OP26")
-    OP_26("OP26");
+    PAINTLESS_DENT_REPAIR("OP26");
+    
     private final String value;
 
     LaborOperationEnum(String v) {

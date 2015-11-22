@@ -69,6 +69,7 @@ public enum AdjustmentTypeEnum {
     BETTERMENT_PARTS_PAINT("Betterment Parts Paint"),
     @XmlEnumValue("Betterment Total Paint")
     BETTERMENT_TOTAL_PAINT("Betterment Total Paint");
+    
     private final String value;
 
     AdjustmentTypeEnum(String v) {

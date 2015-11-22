@@ -30,7 +30,7 @@ public class ProfileEndpoint {
     @Path("/{id:[0-9][0-9]*/profile}")
     @Consumes("application/json")
     public Response create(@PathParam("id") final Long id, final ProfileInfoType profileinfotype) {
-        return Response.status(Status.METHOD_NOT_ALLOWED).build();
+        return Response.status(Status.SERVICE_UNAVAILABLE).build();
     }
 
     /**

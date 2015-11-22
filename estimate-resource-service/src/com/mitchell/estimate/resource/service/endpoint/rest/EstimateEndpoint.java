@@ -25,7 +25,7 @@ public class EstimateEndpoint {
     @POST
     @Consumes("application/json")
     public Response create(final Estimate estimate) {
-        return Response.status(Status.METHOD_NOT_ALLOWED).build();
+        return Response.status(Status.SERVICE_UNAVAILABLE).build();
     }
 
     @GET

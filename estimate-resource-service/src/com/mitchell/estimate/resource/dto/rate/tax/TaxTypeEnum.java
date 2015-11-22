@@ -9,7 +9,6 @@
 package com.mitchell.estimate.resource.dto.rate.tax;
 
 import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
 

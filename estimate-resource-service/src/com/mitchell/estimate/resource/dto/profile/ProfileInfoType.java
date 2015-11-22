@@ -17,6 +17,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+import com.mitchell.estimate.resource.dto.rate.BettermentRateInfoType;
+import com.mitchell.estimate.resource.dto.rate.LaborRateInfoType;
+import com.mitchell.estimate.resource.dto.rate.MaterialsRateInfoType;
+import com.mitchell.estimate.resource.dto.rate.OtherRateInfoType;
+import com.mitchell.estimate.resource.dto.rate.PartsRateInfoType;
 import com.mitchell.estimate.resource.dto.rate.RateInfoType;
 import com.mitchell.estimate.resource.dto.rate.tax.CanadianTaxType;
 
@@ -51,6 +56,11 @@ import com.mitchell.estimate.resource.dto.rate.tax.CanadianTaxType;
 @XmlType(name = "ProfileInfoType", propOrder = {
     "profileName",
     "rateInfo",
+    "laborRateInfo",
+    "partsRateInfo",
+    "materialsRateInfo",
+    "bettermentRateInfo",
+    "otherRateInfo",
     "costPlusBasisInd",
     "drillTimeInd",
     "edgingTimeInd",
@@ -70,6 +80,21 @@ public class ProfileInfoType
     
     @XmlElement(name = "RateInfo", required = true)
     protected List<RateInfoType> rateInfo;
+
+    @XmlElement(name = "LaborRateInfo", required = true)
+    protected List<LaborRateInfoType> laborRateInfo;
+    
+    @XmlElement(name = "PartsRateInfo", required = true)
+    protected List<PartsRateInfoType> partsRateInfo;
+    
+    @XmlElement(name = "MaterialsRateInfo", required = true)
+    protected List<MaterialsRateInfoType> materialsRateInfo;
+    
+    @XmlElement(name = "BettermentRateInfo", required = true)
+    protected List<BettermentRateInfoType> bettermentRateInfo;
+    
+    @XmlElement(name = "OtherRateInfo", required = true)
+    protected List<OtherRateInfoType> otherRateInfo;
     
     @XmlElement(name = "CostPlusBasisInd")
     protected Boolean costPlusBasisInd;
@@ -143,6 +168,151 @@ public class ProfileInfoType
             rateInfo = new ArrayList<RateInfoType>();
         }
         return this.rateInfo;
+    }
+
+    /**
+     * Gets the value of the laborRateInfo property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the laborRateInfo property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getLaborRateInfo().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link LaborRateInfoType }
+     * 
+     * 
+     */
+    public List<LaborRateInfoType> getLaborRateInfo() {
+        if (laborRateInfo == null) {
+            laborRateInfo = new ArrayList<LaborRateInfoType>();
+        }
+        return this.laborRateInfo;
+    }
+
+    /**
+     * Gets the value of the partsRateInfo property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the partsRateInfo property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPartsRateInfo().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link PartsRateInfoType }
+     * 
+     * 
+     */
+    public List<PartsRateInfoType> getPartsRateInfo() {
+        if (partsRateInfo == null) {
+            partsRateInfo = new ArrayList<PartsRateInfoType>();
+        }
+        return this.partsRateInfo;
+    }
+
+    /**
+     * Gets the value of the materialsRateInfo property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the materialsRateInfo property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getMaterialsRateInfo().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link MaterialsRateInfoType }
+     * 
+     * 
+     */
+    public List<MaterialsRateInfoType> getMaterialsRateInfo() {
+        if (materialsRateInfo == null) {
+            materialsRateInfo = new ArrayList<MaterialsRateInfoType>();
+        }
+        return this.materialsRateInfo;
+    }
+
+    /**
+     * Gets the value of the bettermentRateInfo property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bettermentRateInfo property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getBettermentRateInfo().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BettermentRateInfoType }
+     * 
+     * 
+     */
+    public List<BettermentRateInfoType> getBettermentRateInfo() {
+        if (bettermentRateInfo == null) {
+            bettermentRateInfo = new ArrayList<BettermentRateInfoType>();
+        }
+        return this.bettermentRateInfo;
+    }
+
+    /**
+     * Gets the value of the otherRateInfo property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the otherRateInfo property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getOtherRateInfo().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link OtherRateInfoType }
+     * 
+     * 
+     */
+    public List<OtherRateInfoType> getOtherRateInfo() {
+        if (otherRateInfo == null) {
+            otherRateInfo = new ArrayList<OtherRateInfoType>();
+        }
+        return this.otherRateInfo;
     }
 
     /**
