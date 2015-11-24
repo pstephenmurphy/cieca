@@ -13,13 +13,26 @@ import com.mitchell.estimate.resource.service.endpoint.rest.ProfileEndpoint;
 @ApplicationPath("/review")
 public class ReviewResourceService extends Application {
 
-    public Set<Class<?>> getClasses() {
-        Set<Class<?>> classes = new HashSet<Class<?>>();
-        
-        classes.add(AdminEndpoint.class);
-        classes.add(EstimateEndpoint.class);
-        classes.add(ProfileEndpoint.class);
-        
-        return classes;
+    private Set<Object> singletons = new HashSet<Object>();
+    private Set<Class<?>> empty = new HashSet<Class<?>>();
+
+    public ReviewResourceService()
+    {
+       singletons.add(new AdminEndpoint());
+       singletons.add(new EstimateEndpoint());
+       singletons.add(new ProfileEndpoint());
+    }
+    
+    @Override
+    
+    public Set<Class<?>> getClasses()
+    {
+       return empty;
+    }
+
+    @Override
+    public Set<Object> getSingletons()
+    {
+       return singletons;
     }
 }

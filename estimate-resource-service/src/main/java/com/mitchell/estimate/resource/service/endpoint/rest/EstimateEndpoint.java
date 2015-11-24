@@ -14,7 +14,6 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import com.mitchell.estimate.resource.dto.admin.AdminInfoType;
 import com.mitchell.estimate.resource.dto.estimate.Estimate;
 import com.mitchell.estimate.resource.dto.totals.TotalsInfoType;
 import com.mitchell.estimate.resource.dto.vehicle.VehicleInfoType;
@@ -35,18 +34,6 @@ public class EstimateEndpoint {
         Estimate estimate = null;
         Response response = null;
         if (estimate == null) {
-            response = Response.status(Status.NOT_FOUND).build();
-        }
-        return response;
-    }
-
-    @GET
-    @Path("/{id:[0-9][0-9]*}/admin")
-    @Produces("application/json")
-    public Response findAdminById(@PathParam("id") final Long id) {
-        AdminInfoType admin = null;
-        Response response = null;
-        if (admin == null) {
             response = Response.status(Status.NOT_FOUND).build();
         }
         return response;
