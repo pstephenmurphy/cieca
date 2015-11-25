@@ -10,7 +10,7 @@ import com.mitchell.estimate.resource.service.endpoint.rest.AdminEndpoint;
 import com.mitchell.estimate.resource.service.endpoint.rest.EstimateEndpoint;
 import com.mitchell.estimate.resource.service.endpoint.rest.ProfileEndpoint;
 
-@ApplicationPath("/review")
+@ApplicationPath("/")
 public class ReviewResourceService extends Application {
 
     private Set<Object> singletons = new HashSet<Object>();

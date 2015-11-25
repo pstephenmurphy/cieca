@@ -105,8 +105,8 @@ import com.mitchell.estimate.resource.dto.vehicle.VehicleInfoType;
     "customMemo",
     "otherMemos"
 })
-@XmlRootElement(name = "Estimate")
-public class Estimate implements Serializable
+@XmlRootElement(name = "EstimateType")
+public class EstimateType implements Serializable
 {
     private final static long serialVersionUID = 20120208L;
     
@@ -659,7 +659,7 @@ public class Estimate implements Serializable
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Estimate.OtherMemos }
+     * {@link EstimateType.OtherMemos }
      * 
      * 
      */

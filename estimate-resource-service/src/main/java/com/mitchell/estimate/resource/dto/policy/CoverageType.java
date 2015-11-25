@@ -8,9 +8,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -48,27 +50,30 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "content"
+@XmlType(name = "", propOrder = { 
+    "coverageLimits", 
+    "coverageCode", 
+    "coverageTransferableInd", 
+    "deductibleInfo", 
+    "coverageCategory"
+
 })
-public class CoverageType
-    implements Serializable
-{
+public class CoverageType implements Serializable {
 
     private final static long serialVersionUID = 20120208L;
 
     @XmlElement(name = "CoverageLimits")
     protected CoverageLimitsType coverageLimits;
-    
+
     @XmlElement(name = "CoverageCode")
     protected CoverageEnum coverageCode;
-    
+
     @XmlElement(name = "CoverageTransferableInd")
     protected Boolean coverageTransferableInd;
-    
+
     @XmlElement(name = "DeductibleInfo")
     protected DeductibleInfoType deductibleInfo;
-    
+
     @XmlElement(name = "CoverageCategory")
     protected CoverageCategoryEnum coverageCategory;
 

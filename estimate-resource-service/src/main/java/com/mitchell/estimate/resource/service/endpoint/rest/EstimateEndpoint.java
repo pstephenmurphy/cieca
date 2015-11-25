@@ -14,7 +14,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import com.mitchell.estimate.resource.dto.estimate.Estimate;
+import com.mitchell.estimate.resource.dto.estimate.EstimateType;
 import com.mitchell.estimate.resource.dto.totals.TotalsInfoType;
 import com.mitchell.estimate.resource.dto.vehicle.VehicleInfoType;
 
@@ -23,7 +23,7 @@ public class EstimateEndpoint {
 
     @POST
     @Consumes("application/json")
-    public Response create(final Estimate estimate) {
+    public Response create(final EstimateType estimate) {
         return Response.status(Status.SERVICE_UNAVAILABLE).build();
     }
 
@@ -31,7 +31,7 @@ public class EstimateEndpoint {
     @Path("/{id:[0-9][0-9]*}")
     @Produces("application/json")
     public Response findById(@PathParam("id") final Long id) {
-        Estimate estimate = null;
+        EstimateType estimate = null;
         Response response = null;
         if (estimate == null) {
             response = Response.status(Status.NOT_FOUND).build();
@@ -65,15 +65,15 @@ public class EstimateEndpoint {
 
     @GET
     @Produces("application/json")
-    public List<Estimate> listAll(@QueryParam("start") final Integer startPosition, @QueryParam("max") final Integer maxResult) {
-        final List<Estimate> estimates = null;
+    public List<EstimateType> listAll(@QueryParam("start") final Integer startPosition, @QueryParam("max") final Integer maxResult) {
+        final List<EstimateType> estimates = null;
         return estimates;
     }
 
     @PUT
     @Path("/{id:[0-9][0-9]*}")
     @Consumes("application/json")
-    public Response update(@PathParam("id") Long id, final Estimate estimate) {
+    public Response update(@PathParam("id") Long id, final EstimateType estimate) {
         return Response.noContent().build();
     }
 

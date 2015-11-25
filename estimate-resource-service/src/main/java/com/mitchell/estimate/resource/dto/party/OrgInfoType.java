@@ -47,7 +47,7 @@ import com.mitchell.estimate.resource.dto.idinfo.IDInfoType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OrgInfoType", propOrder = {
     "communications",
-    "inInfo",
+    "idInfo",
     "companyName"
 })
 public class OrgInfoType
