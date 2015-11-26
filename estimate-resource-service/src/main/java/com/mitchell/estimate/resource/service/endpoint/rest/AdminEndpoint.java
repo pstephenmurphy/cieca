@@ -10,7 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import com.mitchell.estimate.resource.dto.admin.AdminInfoType;
+import com.mitchell.estimate.resource.entity.admin.AdminInfoType;
 
 @Path("/estimate")
 public class AdminEndpoint {

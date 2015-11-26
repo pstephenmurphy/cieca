@@ -57,5 +57,11 @@
 			<version>4.8.2</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>estimate-resource-entity</groupId>
+			<artifactId>estimate-resource-entity</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 </project>

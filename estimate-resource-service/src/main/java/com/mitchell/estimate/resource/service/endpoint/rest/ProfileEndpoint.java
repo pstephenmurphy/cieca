@@ -13,7 +13,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import com.mitchell.estimate.resource.dto.profile.ProfileInfoType;
+import com.mitchell.estimate.resource.entity.profile.ProfileInfoType;
 
 /**
  * @author pm104238

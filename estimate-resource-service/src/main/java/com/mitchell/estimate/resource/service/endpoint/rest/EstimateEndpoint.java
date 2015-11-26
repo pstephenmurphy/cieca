@@ -14,9 +14,9 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import com.mitchell.estimate.resource.dto.estimate.EstimateType;
-import com.mitchell.estimate.resource.dto.totals.TotalsInfoType;
-import com.mitchell.estimate.resource.dto.vehicle.VehicleInfoType;
+import com.mitchell.estimate.resource.entity.estimate.EstimateType;
+import com.mitchell.estimate.resource.entity.totals.TotalsInfoType;
+import com.mitchell.estimate.resource.entity.vehicle.VehicleInfoType;
 
 @Path("/estimate")
 public class EstimateEndpoint {
