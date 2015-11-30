@@ -16,6 +16,7 @@
 
     <modules>
         <module>estimate-resource-service</module>
+        <module>estimate-resource-entity</module>
     </modules>
     <version>0.0.0.1-SNAPSHOT</version>
 </project>
