@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>estimate-resource-entity</groupId>
-	<artifactId>estimate-resource-entity</artifactId>
+	<groupId>mitchell-entity-manager</groupId>
+	<artifactId>mitchell-entity-manager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>estimate-resource-entity</name>
-	<description>Estimate Resource Entity</description>
+	<name>mitchell-entity-manager</name>
+	<description>Mitchell Entity Manager</description>
 	<build>
 		<resources>
 			<resource>
@@ -33,14 +33,14 @@
 	</parent>
 	<dependencies>
 		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-jaxb-provider</artifactId>
-			<version>2.3.7.Final</version>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>18.0</version>
 		</dependency>
 		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-jaxrs</artifactId>
-			<version>2.3.7.Final</version>
+			<groupId>com.google.code.findbugs</groupId>
+			<artifactId>jsr305</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
