@@ -24,8 +24,10 @@ public abstract class ManagerMapImpl<T extends Entity> implements Manager<T> {
 
 	@Override
 	public void update(T managedEntity) throws NonExistentEntityException {
-		if (null == this.managedEntities.replace(managedEntity.getID(), managedEntity)) {
+		if (Boolean.FALSE == this.managedEntities.containsKey(managedEntity.getID())) {
 			throw new NonExistentEntityException();
+		} else {
+		    this.managedEntities.put(managedEntity.getID(), managedEntity);
 		}
 	}
 
