@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>estimate-resource-entity</groupId>
 	<artifactId>estimate-resource-entity</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.0.1-SNAPSHOT</version>
 	<name>estimate-resource-entity</name>
 	<description>Estimate Resource Entity</description>
 	<build>

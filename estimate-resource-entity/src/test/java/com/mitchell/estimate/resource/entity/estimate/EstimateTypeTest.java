@@ -10,6 +10,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.Ignore;
 
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 
@@ -27,6 +28,7 @@ public class EstimateTypeTest {
     public void tearDown() throws Exception {
     }
 
+    @Ignore
     @Test
     public void generateSchema() throws IOException {
 

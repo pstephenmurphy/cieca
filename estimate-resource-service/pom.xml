@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>estimate-resource-service</groupId>
 	<artifactId>estimate-resource-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>estimate-resource-service</name>
 	<description>Estimate Resource Service</description>
@@ -19,7 +19,6 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>2.2</version>
 				<configuration>
 					<warSourceDirectory>src/main/webapp</warSourceDirectory>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
@@ -60,8 +59,7 @@
 		<dependency>
 			<groupId>estimate-resource-entity</groupId>
 			<artifactId>estimate-resource-entity</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>runtime</scope>
+			<version>0.0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
