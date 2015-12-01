@@ -17,7 +17,8 @@
     <modules>
         <module>estimate-resource-service</module>
         <module>estimate-resource-entity</module>
-        <module>mitchell-entity-manager</module>
+        <module>mitchell-entity-manager</module> 
+        <module>mitchell-unitofwork-service</module>
     </modules>
     <version>0.0.0.1-SNAPSHOT</version>
 </project>
