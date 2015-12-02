@@ -76,11 +76,6 @@
 			<version>4.8.2</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>mitchell-unitofwork-manager</groupId>
-			<artifactId>mitchell-unitofwork-manager</artifactId>
-			<version>0.0.0.1-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 	<description>Mitchell Unit of Work Service</description>
 </project>

@@ -1,4 +1,5 @@
 package com.mitchell.estimate.resource.entity.vehicle.vin;
+
 import java.io.Serializable;
 
 import javax.xml.bind.annotation.XmlAccessType;
