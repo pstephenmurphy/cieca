@@ -106,8 +106,7 @@ import com.mitchell.estimate.resource.entity.rate.tax.TaxExemptInfoType;
     "taxExemptInfo",
     "canadianTax"
 })
-public class ProfileInfoType
-    implements Serializable
+public class ProfileInfoType implements Serializable
 {
 
     private final static long serialVersionUID = 20120208L;
@@ -482,5 +481,4 @@ public class ProfileInfoType
     public void setCanadianTax(CanadianTaxType value) {
         this.canadianTax = value;
     }
-
 }

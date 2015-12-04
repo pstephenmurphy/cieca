@@ -2,7 +2,6 @@ package com.mitchell.entity.manager.impls;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.annotation.Nonnull;
 
@@ -13,9 +12,9 @@ import com.mitchell.entity.manager.DuplicateEntityException;
 import com.mitchell.entity.manager.EntityManager;
 import com.mitchell.entity.manager.NonExistentEntityException;
 
-public class ManagerHashMapImpl<T extends Entity> implements EntityManager<T> {
+public class ManagerHashMapImpl<T extends Entity<K>, K> implements EntityManager<T, K> {
 
-    private Map<UUID, T> managedEntities = new HashMap<UUID, T>();
+    private Map<K, T> managedEntities = new HashMap<K, T>();
 
     @Override
     public void add(@Nonnull T managedEntity) throws DuplicateEntityException, IllegalArgumentException {
@@ -41,26 +40,26 @@ public class ManagerHashMapImpl<T extends Entity> implements EntityManager<T> {
     }
 
     @Override
-    public void delete(@Nonnull T managedEntity) throws NonExistentEntityException, IllegalArgumentException {
-        checkArgument(managedEntity != null);
+    public void delete(@Nonnull K id) throws NonExistentEntityException, IllegalArgumentException {
+        checkArgument(id != null);
 
-        if (null == this.managedEntities.remove(managedEntity.getID())) {
+        if (null == this.managedEntities.remove(id)) {
             throw new NonExistentEntityException();
         }
     }
 
     @Override
-    public T get(@Nonnull UUID id) throws NonExistentEntityException, IllegalArgumentException {
+    public T get(@Nonnull K id) throws NonExistentEntityException, IllegalArgumentException {
         T entity = null;
 
         checkArgument(id != null);
 
         entity = this.managedEntities.get(id);
 
-            if (null == entity) {
-                throw new NonExistentEntityException();
-            }
- 
+        if (null == entity) {
+            throw new NonExistentEntityException();
+        }
+
         return entity;
     }
 }

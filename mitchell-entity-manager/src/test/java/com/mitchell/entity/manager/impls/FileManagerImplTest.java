@@ -4,6 +4,7 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.UUID;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,13 +13,18 @@ import com.mitchell.entity.manager.DuplicateEntityException;
 import com.mitchell.entity.manager.EntityManager;
 import com.mitchell.entity.manager.NonExistentEntityException;
 
-public class ManagerHashMapImplTest {
+public class FileManagerImplTest {
 
     private EntityManager<MockEntity, UUID> manager;
-
+    
     @Before
-    public void setup() {
-        manager = new ManagerHashMapImpl<MockEntity, UUID>();
+    public void setUp() throws Exception {
+        
+        manager = new FileManagerImpl<MockEntity, UUID>(MockEntity.class, ".");
+    }
+
+    @After
+    public void tearDown() throws Exception {
     }
 
     @Test
@@ -105,5 +111,6 @@ public class ManagerHashMapImplTest {
 
         manager.get(entity.getID());
     }
+
 
 }

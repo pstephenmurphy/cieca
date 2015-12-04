@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -11,6 +12,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+import com.mitchell.entity.Entity;
 import com.mitchell.estimate.resource.entity.admin.AdminInfoType;
 import com.mitchell.estimate.resource.entity.application.ApplicationInfoType;
 import com.mitchell.estimate.resource.entity.claim.ClaimInfoType;
@@ -98,9 +100,11 @@ import com.mitchell.estimate.resource.entity.vehicle.VehicleInfoType;
     "otherMemos"
 })
 @XmlRootElement(name = "EstimateType")
-public class EstimateType implements Serializable
+public class EstimateType implements Serializable, Entity<String>
 {
     private final static long serialVersionUID = 20120208L;
+    
+    transient final protected String id;
     
     @XmlElement(name = "SvcProviderName")
     protected String svcProviderName;
@@ -161,6 +165,14 @@ public class EstimateType implements Serializable
     
     @XmlElement(name = "OtherMemos")
     protected List<OtherMemosType> otherMemos;
+
+    public EstimateType() {
+        this.id = UUID.randomUUID().toString();
+    }
+    
+    public EstimateType(String id) {
+        this.id = id;
+    }
 
     /**
      * Gets the value of the svcProviderName property.
@@ -660,6 +672,11 @@ public class EstimateType implements Serializable
             otherMemos = new ArrayList<OtherMemosType>();
         }
         return this.otherMemos;
+    }
+
+    @Override
+    public String getID() {
+        return this.id;
     }
 
 }

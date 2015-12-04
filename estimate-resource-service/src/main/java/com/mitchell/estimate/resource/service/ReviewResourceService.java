@@ -6,33 +6,33 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-import com.mitchell.estimate.resource.service.endpoint.rest.AdminEndpoint;
-import com.mitchell.estimate.resource.service.endpoint.rest.EstimateEndpoint;
-import com.mitchell.estimate.resource.service.endpoint.rest.ProfileEndpoint;
+import com.mitchell.estimate.resource.service.endpoints.AdminEndpoint;
+import com.mitchell.estimate.resource.service.endpoints.EstimateEndpoint;
+import com.mitchell.estimate.resource.service.endpoints.ProfileEndpoint;
+import com.mitchell.estimate.resource.service.endpoints.RepairTotalsEndpoint;
+import com.mitchell.estimate.resource.service.endpoints.VehicleEndpoint;
 
-@ApplicationPath("/")
+@ApplicationPath("/review")
 public class ReviewResourceService extends Application {
 
     private Set<Object> singletons = new HashSet<Object>();
     private Set<Class<?>> empty = new HashSet<Class<?>>();
 
-    public ReviewResourceService()
-    {
-       singletons.add(new AdminEndpoint());
-       singletons.add(new EstimateEndpoint());
-       singletons.add(new ProfileEndpoint());
-    }
-    
-    @Override
-    
-    public Set<Class<?>> getClasses()
-    {
-       return empty;
+    public ReviewResourceService() {
+        singletons.add(new EstimateEndpoint());
+        singletons.add(new AdminEndpoint());
+        singletons.add(new ProfileEndpoint());
+        singletons.add(new VehicleEndpoint());
+        singletons.add(new RepairTotalsEndpoint());
     }
 
     @Override
-    public Set<Object> getSingletons()
-    {
-       return singletons;
+    public Set<Class<?>> getClasses() {
+        return empty;
+    }
+
+    @Override
+    public Set<Object> getSingletons() {
+        return singletons;
     }
 }

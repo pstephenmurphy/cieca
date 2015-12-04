@@ -3,6 +3,12 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd">
         
 <web-app>
+  
+  <context-param>
+    <param-name>resteasy.providers</param-name>
+    <param-value>com.mitchell.estimate.resource.service.exception.ReviewResourceServiceErrorHandler</param-value>
+  </context-param>
+  
   <servlet>
     <servlet-name>resteasy-servlet</servlet-name>
     <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>

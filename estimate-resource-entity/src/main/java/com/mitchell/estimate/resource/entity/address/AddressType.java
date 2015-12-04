@@ -45,16 +45,22 @@ public class AddressType
 {
 
     private final static long serialVersionUID = 20120208L;
+    
     @XmlElement(name = "Address1")
     protected String address1;
+    
     @XmlElement(name = "Address2")
     protected String address2;
+    
     @XmlElement(name = "City")
     protected String city;
+    
     @XmlElement(name = "StateProvince")
     protected StateProvinceEnum stateProvince;
+    
     @XmlElement(name = "PostalCode")
     protected String postalCode;
+    
     @XmlElement(name = "CountryCode")
     protected CountryCodeClosedEnum countryCode;
 
