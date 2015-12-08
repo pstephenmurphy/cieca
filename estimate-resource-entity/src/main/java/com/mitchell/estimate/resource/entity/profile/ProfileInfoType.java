@@ -8,6 +8,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.mitchell.estimate.resource.entity.parts.AlternatePartInfoType;
@@ -106,6 +107,7 @@ import com.mitchell.estimate.resource.entity.rate.tax.TaxExemptInfoType;
     "taxExemptInfo",
     "canadianTax"
 })
+@XmlRootElement(name = "ProfileInfoType")
 public class ProfileInfoType implements Serializable
 {
 

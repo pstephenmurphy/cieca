@@ -7,6 +7,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.mitchell.estimate.resource.entity.attachment.FileAttachmentType;
@@ -68,6 +69,7 @@ import com.mitchell.estimate.resource.entity.vehicle.vin.VINInfoType;
     "fileAttachment",
     "customElement"
 })
+@XmlRootElement(name = "VehicleInfoType")
 public class VehicleInfoType implements Serializable
 {
 
