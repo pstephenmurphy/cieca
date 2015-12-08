@@ -7,7 +7,7 @@ import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 
 public abstract class AbstractEstimateEndpoint {
 
-    protected EntityManager<EstimateType, String> entityManager = new ManagerHashMapImpl<EstimateType, String>();
+    static protected EntityManager<EstimateType, String> entityManager = new ManagerHashMapImpl<EstimateType, String>();
 
     protected AbstractEstimateEndpoint() {
     }
