@@ -32,7 +32,7 @@ public class VehicleEndpoint extends AbstractEstimateEndpoint {
      * @return
      */
     @GET
-    @Path("/{id:[0-9][0-9]*/vehicleInfo}")
+    @Path("/{id:[0-9][0-9]*}/vehicleInfo")
     @Produces("application/json")
     public Response findById(@PathParam("id") final String id) {
         EstimateType estimate = findEstimate(id);
@@ -55,7 +55,7 @@ public class VehicleEndpoint extends AbstractEstimateEndpoint {
      * @return
      */
     @PUT
-    @Path("/{id:[0-9][0-9]*/vehicleInfo}")
+    @Path("/{id:[0-9][0-9]*}/vehicleInfo")
     @Consumes("application/json")
     public Response update(@PathParam("id") String id, final VehicleInfoType vehicleInfo) {
         return Response.noContent().build();

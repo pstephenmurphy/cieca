@@ -34,7 +34,7 @@ public class RepairTotalsEndpoint extends AbstractEstimateEndpoint {
      * @return
      */
     @GET
-    @Path("/{id:[0-9][0-9]*/repairTotals}")
+    @Path("/{id:[0-9][0-9]*}/repairTotals")
     @Produces("application/json")
     public Response findById(@PathParam("id") final String id) {
         EstimateType estimate = findEstimate(id);
@@ -57,7 +57,7 @@ public class RepairTotalsEndpoint extends AbstractEstimateEndpoint {
      * @return
      */
     @PUT
-    @Path("/{id:[0-9][0-9]*/repairTotals}")
+    @Path("/{id:[0-9][0-9]*}/repairTotals")
     @Consumes("application/json")
     public Response update(@PathParam("id") String id, final List<RepairTotalsInfoType> repairTotals) {
         return Response.noContent().build();

@@ -27,7 +27,7 @@ public class ReviewResourceService extends Application {
         
         EntityManager<EstimateType, String> entityManager;
         try {
-            entityManager = new FileManagerImpl<EstimateType, String>(EstimateType.class, ".");
+            entityManager = new FileManagerImpl<EstimateType, String>(EstimateType.class, "c:/temp");
             
             singletons.add(new EstimateEndpoint(entityManager));
             singletons.add(new AdminEndpoint(entityManager));

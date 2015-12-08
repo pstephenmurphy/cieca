@@ -21,7 +21,7 @@ public class AdminEndpoint extends AbstractEstimateEndpoint {
     }
 
     @GET
-    @Path("/{id:[0-9][0-9]*/adminInfo}")
+    @Path("/{id:[0-9][0-9]*}/adminInfo")
     @Produces("application/json")
     public Response findById(@PathParam("id") final String id) {
         EstimateType estimate = findEstimate(id);
@@ -37,7 +37,7 @@ public class AdminEndpoint extends AbstractEstimateEndpoint {
     }
 
     @PUT
-    @Path("/{id:[0-9][0-9]*/adminInfo}")
+    @Path("/{id:[0-9][0-9]*}/adminInfo")
     @Consumes("application/json")
     public Response update(@PathParam("id") String id, final AdminInfoType adminInfo) {
         return Response.noContent().build();
