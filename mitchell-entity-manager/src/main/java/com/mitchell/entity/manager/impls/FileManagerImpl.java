@@ -21,11 +21,14 @@ public class FileManagerImpl<T extends Entity<K>, K> implements EntityManager<T,
     private JAXBContext jaxbContext;
     private Marshaller marshaller;
     private Unmarshaller unmarshaller;
+    private Class<T> classToBeBound;
 
     public FileManagerImpl(Class<T> classToBeBound, String path) throws JAXBException {
         managedFileEntities = new File(path);
         
-        jaxbContext = JAXBContext.newInstance(classToBeBound);
+        this.classToBeBound = classToBeBound;
+        
+        jaxbContext = JAXBContext.newInstance(this.classToBeBound);
 
         marshaller = jaxbContext.createMarshaller();
 
@@ -93,7 +96,7 @@ public class FileManagerImpl<T extends Entity<K>, K> implements EntityManager<T,
         }
 
         try {
-            entity = (T) unmarshaller.unmarshal(fileEntityToReturn);
+            entity = classToBeBound.cast(unmarshaller.unmarshal(fileEntityToReturn));
         } catch (JAXBException jaxbEx) {
             throw new NonExistentEntityException(jaxbEx);
         }
