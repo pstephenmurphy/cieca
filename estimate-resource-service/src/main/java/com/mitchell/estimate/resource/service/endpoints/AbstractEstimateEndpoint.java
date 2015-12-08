@@ -2,14 +2,14 @@ package com.mitchell.estimate.resource.service.endpoints;
 
 import com.mitchell.entity.manager.EntityManager;
 import com.mitchell.entity.manager.NonExistentEntityException;
-import com.mitchell.entity.manager.impls.ManagerHashMapImpl;
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 
 public abstract class AbstractEstimateEndpoint {
 
-    static protected EntityManager<EstimateType, String> entityManager = new ManagerHashMapImpl<EstimateType, String>();
+    protected EntityManager<EstimateType, String> entityManager;
 
-    protected AbstractEstimateEndpoint() {
+    protected AbstractEstimateEndpoint(EntityManager<EstimateType, String> entityManager) {
+        this.entityManager = entityManager;
     }
 
     protected EstimateType findEstimate(final String id) {

@@ -12,13 +12,17 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import com.mitchell.entity.manager.DuplicateEntityException;
+import com.mitchell.entity.manager.EntityManager;
 import com.mitchell.entity.manager.NonExistentEntityException;
-
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 
 @Path("/estimate")
 public class EstimateEndpoint extends AbstractEstimateEndpoint {
     
+    public EstimateEndpoint(EntityManager<EstimateType, String> entityManager) {
+        super(entityManager);
+    }
+
     @POST
     @Path("/{id:[0-9][0-9]*}")
     @Produces("application/json")

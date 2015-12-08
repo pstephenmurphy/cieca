@@ -5,7 +5,11 @@ import java.util.Set;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
+import javax.xml.bind.JAXBException;
 
+import com.mitchell.entity.manager.EntityManager;
+import com.mitchell.entity.manager.impls.FileManagerImpl;
+import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 import com.mitchell.estimate.resource.service.endpoints.AdminEndpoint;
 import com.mitchell.estimate.resource.service.endpoints.EstimateEndpoint;
 import com.mitchell.estimate.resource.service.endpoints.ProfileEndpoint;
@@ -17,13 +21,24 @@ public class ReviewResourceService extends Application {
 
     private Set<Object> singletons = new HashSet<Object>();
     private Set<Class<?>> empty = new HashSet<Class<?>>();
+    
 
     public ReviewResourceService() {
-        singletons.add(new EstimateEndpoint());
-        singletons.add(new AdminEndpoint());
-        singletons.add(new ProfileEndpoint());
-        singletons.add(new VehicleEndpoint());
-        singletons.add(new RepairTotalsEndpoint());
+        
+        EntityManager<EstimateType, String> entityManager;
+        try {
+            entityManager = new FileManagerImpl<EstimateType, String>(EstimateType.class, ".");
+            
+            singletons.add(new EstimateEndpoint(entityManager));
+            singletons.add(new AdminEndpoint(entityManager));
+            singletons.add(new ProfileEndpoint(entityManager));
+            singletons.add(new VehicleEndpoint(entityManager));
+            singletons.add(new RepairTotalsEndpoint(entityManager));
+            
+       } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        
     }
 
     @Override

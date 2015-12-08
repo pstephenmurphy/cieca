@@ -2,7 +2,6 @@ package com.mitchell.estimate.resource.entity.estimate;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.UUID;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

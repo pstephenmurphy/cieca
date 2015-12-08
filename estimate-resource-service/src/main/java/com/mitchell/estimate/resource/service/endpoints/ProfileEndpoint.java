@@ -12,6 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import com.mitchell.entity.manager.EntityManager;
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 import com.mitchell.estimate.resource.entity.profile.ProfileInfoType;
 
@@ -22,6 +23,10 @@ import com.mitchell.estimate.resource.entity.profile.ProfileInfoType;
 @Path("/estimate")
 public class ProfileEndpoint extends AbstractEstimateEndpoint {
     
+    public ProfileEndpoint(EntityManager<EstimateType, String> entityManager) {
+        super(entityManager);
+    }
+
     /**
      * @param id
      * @return

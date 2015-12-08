@@ -22,7 +22,7 @@ public class FileManagerImpl<T extends Entity<K>, K> implements EntityManager<T,
     private Marshaller marshaller;
     private Unmarshaller unmarshaller;
     private Class<T> classToBeBound;
-
+    
     public FileManagerImpl(Class<T> classToBeBound, String path) throws JAXBException {
         managedFileEntities = new File(path);
         

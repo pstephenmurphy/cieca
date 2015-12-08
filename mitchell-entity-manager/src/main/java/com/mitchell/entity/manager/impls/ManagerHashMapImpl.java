@@ -1,7 +1,7 @@
 package com.mitchell.entity.manager.impls;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.annotation.Nonnull;
 
@@ -14,8 +14,8 @@ import com.mitchell.entity.manager.NonExistentEntityException;
 
 public class ManagerHashMapImpl<T extends Entity<K>, K> implements EntityManager<T, K> {
 
-    private Map<K, T> managedEntities = new HashMap<K, T>();
-
+    private Map<K, T> managedEntities = new ConcurrentHashMap<K, T>();
+    
     @Override
     public void add(@Nonnull T managedEntity) throws DuplicateEntityException, IllegalArgumentException {
         checkArgument(managedEntity != null);

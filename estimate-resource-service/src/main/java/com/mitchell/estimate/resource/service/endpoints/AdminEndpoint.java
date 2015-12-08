@@ -9,11 +9,16 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import com.mitchell.entity.manager.EntityManager;
 import com.mitchell.estimate.resource.entity.admin.AdminInfoType;
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 
 @Path("/estimate")
 public class AdminEndpoint extends AbstractEstimateEndpoint {
+
+    public AdminEndpoint(EntityManager<EstimateType, String> entityManager) {
+        super(entityManager);
+    }
 
     @GET
     @Path("/{id:[0-9][0-9]*/adminInfo}")

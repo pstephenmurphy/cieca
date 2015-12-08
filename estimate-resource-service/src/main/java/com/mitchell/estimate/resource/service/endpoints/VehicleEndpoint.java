@@ -12,6 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import com.mitchell.entity.manager.EntityManager;
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 import com.mitchell.estimate.resource.entity.vehicle.VehicleInfoType;
 
@@ -22,6 +23,10 @@ import com.mitchell.estimate.resource.entity.vehicle.VehicleInfoType;
 @Path("/estimate")
 public class VehicleEndpoint extends AbstractEstimateEndpoint {
     
+    public VehicleEndpoint(EntityManager<EstimateType, String> entityManager) {
+        super(entityManager);
+    }
+
     /**
      * @param id
      * @return
