@@ -54,14 +54,4 @@ public class VehicleEndpoint extends AbstractEstimateEndpoint {
         return Response.status(Status.BAD_REQUEST).build();
     }
 
-	private Response getResponse(VehicleInfoType vehicleInfo) {
-		Response response;
-		if (vehicleInfo == null) {
-            response = Response.noContent().build();
-        } else {
-            response = Response.ok(vehicleInfo).build();
-        }
-		return response;
-	}
-
 }

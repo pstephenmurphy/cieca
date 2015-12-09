@@ -77,25 +77,4 @@ public class RepairTotalsEndpoint extends AbstractEstimateEndpoint {
     public Response update(@PathParam("id") String id, final List<RepairTotalsInfoType> repairTotals) {
         return Response.noContent().build();
     }
-    
-	private Response getResponse(RepairTotalsInfoType repairTotalsInfo) {
-		Response response;
-		if (repairTotalsInfo == null) {
-            response = Response.noContent().build();
-        } else {
-            response = Response. ok().entity(repairTotalsInfo).build();
-        }
-		return response;
-	}
-	
-	private Response getResponse(List<RepairTotalsInfoType> repairTotals) {
-		Response response;
-		if (repairTotals == null) {
-            response = Response.noContent().build();
-        } else {
-            response = Response. ok().entity(repairTotals).build();
-        }
-		
-		return response;
-	}
 }

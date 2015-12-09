@@ -7,7 +7,6 @@ import javax.ws.rs.WebApplicationException;
 
 import com.mitchell.entity.manager.EntityManager;
 import com.mitchell.entity.manager.NonExistentEntityException;
-
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 
 public abstract class AbstractEstimateEndpoint {
@@ -37,5 +36,15 @@ public abstract class AbstractEstimateEndpoint {
     
     protected void handleException(Throwable cause, Status status) throws WebApplicationException {
     	throw new WebApplicationException(cause, Response.status(status).build());
+    }
+
+    protected <T> Response getResponse(T object) {
+    	Response response;
+    	if (null == object) {
+            response = Response.noContent().build();
+        } else {
+            response = Response.ok(object).build();
+        }
+    	return response;
     }
 }

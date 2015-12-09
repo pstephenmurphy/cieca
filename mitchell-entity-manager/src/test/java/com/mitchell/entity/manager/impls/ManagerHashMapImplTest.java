@@ -4,6 +4,7 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.UUID;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,15 +16,24 @@ import com.mitchell.entity.manager.NonExistentEntityException;
 public class ManagerHashMapImplTest {
 
     private EntityManager<MockEntity, UUID> manager;
+    private MockEntity entity;
 
     @Before
     public void setup() {
         manager = new ManagerHashMapImpl<MockEntity, UUID>();
+        entity = new MockEntity(UUID.fromString("23edf4f6-9c8f-4410-a918-eb72b9ca9dd8"));
+    }
+    
+    @After
+    public void tearDown() {
+        try {
+            manager.delete(entity.getID());
+        } catch (Exception e) {
+        } 
     }
 
     @Test
     public void addHappyPath() throws Exception {
-        MockEntity entity = new MockEntity();
 
         manager.add(entity);
     }
@@ -35,7 +45,6 @@ public class ManagerHashMapImplTest {
 
     @Test(expected = DuplicateEntityException.class)
     public void addExistingEntity() throws Exception {
-        MockEntity entity = new MockEntity();
 
         manager.add(entity);
         manager.add(entity);
@@ -43,7 +52,6 @@ public class ManagerHashMapImplTest {
 
     @Test
     public void updateHappyPath() throws Exception {
-        MockEntity entity = new MockEntity();
 
         manager.add(entity);
         manager.update(entity);
@@ -57,14 +65,12 @@ public class ManagerHashMapImplTest {
 
     @Test(expected = NonExistentEntityException.class)
     public void updateNonExistingEntity() throws Exception {
-        MockEntity entity = new MockEntity();
 
         manager.update(entity);
     }
 
     @Test
     public void deleteHappyPath() throws Exception {
-        MockEntity entity = new MockEntity();
 
         manager.add(entity);
         manager.delete(entity.getID());
@@ -78,14 +84,12 @@ public class ManagerHashMapImplTest {
 
     @Test(expected = NonExistentEntityException.class)
     public void deleteNonExistingEntity() throws Exception {
-        MockEntity entity = new MockEntity();
 
         manager.delete(entity.getID());
     }
 
     @Test
     public void getHappyPath() throws Exception {
-        MockEntity entity = new MockEntity();
 
         manager.add(entity);
         MockEntity retVal = manager.get(entity.getID());
@@ -101,7 +105,6 @@ public class ManagerHashMapImplTest {
 
     @Test(expected = NonExistentEntityException.class)
     public void getNonExistingEntity() throws Exception {
-        MockEntity entity = new MockEntity();
 
         manager.get(entity.getID());
     }

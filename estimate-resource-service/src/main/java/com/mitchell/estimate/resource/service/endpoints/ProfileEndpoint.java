@@ -54,14 +54,4 @@ public class ProfileEndpoint extends AbstractEstimateEndpoint {
         return Response.status(Status.BAD_REQUEST).build();
     }
 
-	private Response getResponse(ProfileInfoType profileInfo) {
-		Response response;
-		if (profileInfo == null) {
-            response = Response.noContent().build();
-        } else {
-            response = Response.ok(profileInfo).build();
-        }
-		return response;
-	}
-
 }

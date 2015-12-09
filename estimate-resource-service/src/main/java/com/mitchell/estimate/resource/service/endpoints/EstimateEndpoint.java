@@ -80,14 +80,4 @@ public class EstimateEndpoint extends AbstractEstimateEndpoint {
         }
         return result;
     }
-
-	private Response getResponse(EstimateType estimate) {
-		Response response;
-		if (estimate == null) {
-            response = Response.noContent().build();
-        } else {
-            response = Response.ok(estimate).build();
-        }
-		return response;
-	}
 }

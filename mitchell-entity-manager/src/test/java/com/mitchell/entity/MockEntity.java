@@ -12,7 +12,11 @@ public class MockEntity implements Entity<UUID> {
     private UUID entityId;
 
     public MockEntity() {
-        entityId = UUID.randomUUID();
+        entityId = null;;
+    }
+    
+    public MockEntity(UUID uuid) {
+        entityId = uuid;
     }
 
     @Override
