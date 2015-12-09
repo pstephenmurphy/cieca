@@ -27,13 +27,7 @@ public class AdminEndpoint extends AbstractEstimateEndpoint {
         EstimateType estimate = findEstimate(id);
         AdminInfoType adminInfo = (null != estimate ? estimate.getAdminInfo() : null);
 
-        Response response = null;
-        if (adminInfo == null) {
-            response = Response.noContent().build();
-        } else {
-            response = Response.ok(adminInfo).build();
-        }
-        return response;
+        return getResponse(adminInfo);
     }
 
     @PUT
@@ -42,4 +36,15 @@ public class AdminEndpoint extends AbstractEstimateEndpoint {
     public Response update(@PathParam("id") String id, final AdminInfoType adminInfo) {
         return Response.noContent().build();
     }
+
+	private Response getResponse(AdminInfoType adminInfo) {
+		Response response;
+		if (adminInfo == null) {
+            response = Response.noContent().build();
+        } else {
+            response = Response.ok(adminInfo).build();
+        }
+		return response;
+	}
+
 }

@@ -11,6 +11,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 
 import com.mitchell.entity.manager.EntityManager;
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
@@ -38,15 +39,7 @@ public class ProfileEndpoint extends AbstractEstimateEndpoint {
         EstimateType estimate = findEstimate(id);
         ProfileInfoType profileInfo = (null != estimate ? estimate.getProfileInfo() : null);
         
-        Response response;
-        
-        if (profileInfo == null) {
-            response = Response.noContent().build();
-        } else {
-            response = Response.ok(profileInfo).build();
-        }
-        
-        return response;
+        return getResponse(profileInfo);
     }
 
     /**
@@ -58,6 +51,17 @@ public class ProfileEndpoint extends AbstractEstimateEndpoint {
     @Path("/{id:[0-9][0-9]*}/profileInfo")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response update(@PathParam("id") String id, final ProfileInfoType profileInfo) {
-        return Response.noContent().build();
+        return Response.status(Status.BAD_REQUEST).build();
     }
+
+	private Response getResponse(ProfileInfoType profileInfo) {
+		Response response;
+		if (profileInfo == null) {
+            response = Response.noContent().build();
+        } else {
+            response = Response.ok(profileInfo).build();
+        }
+		return response;
+	}
+
 }

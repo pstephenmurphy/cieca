@@ -6,7 +6,6 @@ package com.mitchell.estimate.resource.service.endpoints;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -14,8 +13,10 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 
 import com.mitchell.entity.manager.EntityManager;
+
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 import com.mitchell.estimate.resource.entity.totals.RepairTotalsInfoType;
 
@@ -41,13 +42,8 @@ public class RepairTotalsEndpoint extends AbstractEstimateEndpoint {
         EstimateType estimate = findEstimate(id);
         List<RepairTotalsInfoType> repairTotals = (null != estimate ? estimate.getRepairTotalsInfo() : null);
 
-        Response response;
-        
-        if (repairTotals == null) {
-            response = Response.noContent().build();
-        } else {
-            response = Response. ok().entity(repairTotals).build();
-        }
+        @SuppressWarnings("unused")
+		Response response = getResponse(repairTotals);
         
         return repairTotals;
     }
@@ -64,18 +60,12 @@ public class RepairTotalsEndpoint extends AbstractEstimateEndpoint {
         try {
             repairTotalsInfo = repairTotals.get(index);
         } catch (IndexOutOfBoundsException e) {
-        }
-
-        Response response;
-        
-        if (repairTotalsInfo == null) {
-            response = Response.noContent().build();
-        } else {
-            response = Response. ok().entity(repairTotalsInfo).build();
+        	handleException(e, Status.INTERNAL_SERVER_ERROR);
         }
         
-        return response;
+        return getResponse(repairTotalsInfo);
     }
+
     /**
      * @param id
      * @param profileinfotype
@@ -87,4 +77,25 @@ public class RepairTotalsEndpoint extends AbstractEstimateEndpoint {
     public Response update(@PathParam("id") String id, final List<RepairTotalsInfoType> repairTotals) {
         return Response.noContent().build();
     }
+    
+	private Response getResponse(RepairTotalsInfoType repairTotalsInfo) {
+		Response response;
+		if (repairTotalsInfo == null) {
+            response = Response.noContent().build();
+        } else {
+            response = Response. ok().entity(repairTotalsInfo).build();
+        }
+		return response;
+	}
+	
+	private Response getResponse(List<RepairTotalsInfoType> repairTotals) {
+		Response response;
+		if (repairTotals == null) {
+            response = Response.noContent().build();
+        } else {
+            response = Response. ok().entity(repairTotals).build();
+        }
+		
+		return response;
+	}
 }

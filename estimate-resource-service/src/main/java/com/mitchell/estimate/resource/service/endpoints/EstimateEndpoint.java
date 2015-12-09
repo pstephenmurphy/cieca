@@ -10,6 +10,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 
 import com.mitchell.entity.manager.DuplicateEntityException;
 import com.mitchell.entity.manager.EntityManager;
@@ -36,21 +37,15 @@ public class EstimateEndpoint extends AbstractEstimateEndpoint {
     @Produces(MediaType.APPLICATION_JSON)
     public Response findById(@PathParam("id") final String id) {
         EstimateType estimate = findEstimate(id);
-        Response response;
         
-        if (estimate == null) {
-            response = Response.noContent().build();
-        } else {
-            response = Response.ok(estimate).build();
-        }
-        return response;
+        return getResponse(estimate);
     }
 
     @PUT
     @Path("/{id:[0-9][0-9]*}")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response update(@PathParam("id") String id, final EstimateType estimate) {
-        return Response.noContent().build();
+        return Response.status(Status.BAD_REQUEST).build();
     }
 
     @DELETE
@@ -59,7 +54,7 @@ public class EstimateEndpoint extends AbstractEstimateEndpoint {
     public Response deleteById(@PathParam("id") final String id) {
         Boolean result = deleteEstimate(id);
         
-        return (true == result ? Response.ok() : Response.noContent()).build();
+        return (true == result ? Response.ok() : Response.status(Status.BAD_REQUEST)).build();
     }
 
     private EstimateType initEstimate(final String id) {
@@ -67,9 +62,9 @@ public class EstimateEndpoint extends AbstractEstimateEndpoint {
         try {
             entityManager.add(estimate);
         } catch (IllegalArgumentException e) {
-            e.printStackTrace();
+        	handleException(e, Status.INTERNAL_SERVER_ERROR);
         } catch (DuplicateEntityException e) {
-            e.printStackTrace();
+        	handleException(e, Status.BAD_REQUEST);
         }
         return estimate;
     }
@@ -85,4 +80,14 @@ public class EstimateEndpoint extends AbstractEstimateEndpoint {
         }
         return result;
     }
+
+	private Response getResponse(EstimateType estimate) {
+		Response response;
+		if (estimate == null) {
+            response = Response.noContent().build();
+        } else {
+            response = Response.ok(estimate).build();
+        }
+		return response;
+	}
 }

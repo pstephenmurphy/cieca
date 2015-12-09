@@ -11,6 +11,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 
 import com.mitchell.entity.manager.EntityManager;
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
@@ -38,15 +39,7 @@ public class VehicleEndpoint extends AbstractEstimateEndpoint {
         EstimateType estimate = findEstimate(id);
         VehicleInfoType vehicleInfo = (null != estimate ? estimate.getVehicleInfo() : null);
         
-        Response response;
-        
-        if (vehicleInfo == null) {
-            response = Response.noContent().build();
-        } else {
-            response = Response.ok(vehicleInfo).build();
-        }
-        
-        return response;
+        return getResponse(vehicleInfo);
     }
 
     /**
@@ -58,6 +51,17 @@ public class VehicleEndpoint extends AbstractEstimateEndpoint {
     @Path("/{id:[0-9][0-9]*}/vehicleInfo")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response update(@PathParam("id") String id, final VehicleInfoType vehicleInfo) {
-        return Response.noContent().build();
+        return Response.status(Status.BAD_REQUEST).build();
     }
+
+	private Response getResponse(VehicleInfoType vehicleInfo) {
+		Response response;
+		if (vehicleInfo == null) {
+            response = Response.noContent().build();
+        } else {
+            response = Response.ok(vehicleInfo).build();
+        }
+		return response;
+	}
+
 }
