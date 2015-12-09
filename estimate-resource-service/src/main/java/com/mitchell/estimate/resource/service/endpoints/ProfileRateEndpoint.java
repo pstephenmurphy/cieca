@@ -16,18 +16,18 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import com.mitchell.entity.manager.EntityManager;
-
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
-import com.mitchell.estimate.resource.entity.totals.RepairTotalsInfoType;
+import com.mitchell.estimate.resource.entity.profile.ProfileInfoType;
+import com.mitchell.estimate.resource.entity.rate.RateInfoType;
 
 /**
  * @author pm104238
  *
  */
 @Path("/estimate")
-public class RepairTotalsEndpoint extends AbstractEstimateEndpoint {
+public class ProfileRateEndpoint extends AbstractEstimateEndpoint {
     
-    public RepairTotalsEndpoint(EntityManager<EstimateType, String> entityManager) {
+    public ProfileRateEndpoint(EntityManager<EstimateType, String> entityManager) {
         super(entityManager);
     }
 
@@ -36,34 +36,34 @@ public class RepairTotalsEndpoint extends AbstractEstimateEndpoint {
      * @return
      */
     @GET
-    @Path("/{id:[0-9][0-9]*}/repairTotals")
+    @Path("/{id:[0-9][0-9]*}/profile/rates")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<RepairTotalsInfoType> findById(@PathParam("id") final String id) {
+    public List<RateInfoType> findById(@PathParam("id") final String id) {
         EstimateType estimate = findEstimate(id);
-        List<RepairTotalsInfoType> repairTotals = (null != estimate ? estimate.getRepairTotalsInfo() : null);
+        List<RateInfoType> rateInfos = (null != estimate) ? getProfileRate(estimate) : null;
 
         @SuppressWarnings("unused")
-		Response response = getResponse(repairTotals);
+		Response response = getResponse(rateInfos);
         
-        return repairTotals;
+        return rateInfos;
     }
 
     @GET
-    @Path("/{id:[0-9][0-9]*}/repairTotal/{index:[0-9]+}")
+    @Path("/{id:[0-9][0-9]*}/profile/rate/{index:[0-9]+}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response findRepairTotalByIdAndIndex(@PathParam("id") final String id, @PathParam("index") final Integer index) {
         EstimateType estimate = findEstimate(id);
-        List<RepairTotalsInfoType> repairTotals = (null != estimate ? estimate.getRepairTotalsInfo() : null);
+        List<RateInfoType> rateInfos = (null != estimate) ? getProfileRate(estimate) : null;
         
-        RepairTotalsInfoType repairTotalsInfo = null;
+        RateInfoType rateInfo = null;
         
         try {
-            repairTotalsInfo = repairTotals.get(index);
+            rateInfo = rateInfos.get(index);
         } catch (IndexOutOfBoundsException e) {
         	handleException(e, Status.INTERNAL_SERVER_ERROR);
         }
         
-        return getResponse(repairTotalsInfo);
+        return getResponse(rateInfo);
     }
 
     /**
@@ -72,16 +72,21 @@ public class RepairTotalsEndpoint extends AbstractEstimateEndpoint {
      * @return
      */
     @PUT
-    @Path("/{id:[0-9][0-9]*}/repairTotals")
+    @Path("/{id:[0-9][0-9]*}/profile/rate")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response update(@PathParam("id") String id, final List<RepairTotalsInfoType> repairTotals) {
+    public Response update(@PathParam("id") String id, final List<RateInfoType> repairTotals) {
         return Response.noContent().build();
     }
     
     @PUT
-    @Path("/{id:[0-9][0-9]*}/repairTotal/{index:[0-9]+}")
+    @Path("/{id:[0-9][0-9]*}/profile/rate/{index:[0-9]+}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response update(@PathParam("id") String id, @PathParam("index") final Integer index, final RepairTotalsInfoType repairTotals) {
+    public Response update(@PathParam("id") String id, @PathParam("index") final Integer index, final RateInfoType repairTotal) {
         return Response.noContent().build();
+    }
+
+    private List<RateInfoType> getProfileRate(EstimateType estimate) {
+        ProfileInfoType profileInfo = estimate.getProfileInfo();
+        return (null == profileInfo) ? null : profileInfo.getRateInfo();
     }
 }
