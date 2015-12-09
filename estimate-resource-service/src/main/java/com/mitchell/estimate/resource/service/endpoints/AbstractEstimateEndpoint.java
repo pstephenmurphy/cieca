@@ -1,5 +1,7 @@
 package com.mitchell.estimate.resource.service.endpoints;
 
+import javax.ws.rs.core.GenericEntity;
+
 import com.mitchell.entity.manager.EntityManager;
 import com.mitchell.entity.manager.NonExistentEntityException;
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
@@ -22,5 +24,10 @@ public abstract class AbstractEstimateEndpoint {
             e.printStackTrace();
         }
         return estimate;
+    }
+    
+    protected <T> GenericEntity<T> getGeneric(T list) {
+        return new GenericEntity<T>(list) {
+        };
     }
 }

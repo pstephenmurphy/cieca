@@ -8,8 +8,8 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
 
 import com.mitchell.entity.manager.DuplicateEntityException;
 import com.mitchell.entity.manager.EntityManager;
@@ -25,7 +25,7 @@ public class EstimateEndpoint extends AbstractEstimateEndpoint {
 
     @POST
     @Path("/{id:[0-9][0-9]*}")
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response init(@PathParam("id") final String id) {
         EstimateType estimate = initEstimate(id);
         return Response.ok(estimate).build();
@@ -33,13 +33,13 @@ public class EstimateEndpoint extends AbstractEstimateEndpoint {
 
     @GET
     @Path("/{id:[0-9][0-9]*}")
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response findById(@PathParam("id") final String id) {
         EstimateType estimate = findEstimate(id);
         Response response;
         
         if (estimate == null) {
-            response = Response.status(Status.NOT_FOUND).build();
+            response = Response.noContent().build();
         } else {
             response = Response.ok(estimate).build();
         }
@@ -48,17 +48,18 @@ public class EstimateEndpoint extends AbstractEstimateEndpoint {
 
     @PUT
     @Path("/{id:[0-9][0-9]*}")
-    @Consumes("application/json")
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response update(@PathParam("id") String id, final EstimateType estimate) {
         return Response.noContent().build();
     }
 
     @DELETE
     @Path("/{id:[0-9][0-9]*}")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response deleteById(@PathParam("id") final String id) {
         Boolean result = deleteEstimate(id);
         
-        return (true == result ? Response.ok() : Response.status(Status.NOT_FOUND)).build();
+        return (true == result ? Response.ok() : Response.noContent()).build();
     }
 
     private EstimateType initEstimate(final String id) {
