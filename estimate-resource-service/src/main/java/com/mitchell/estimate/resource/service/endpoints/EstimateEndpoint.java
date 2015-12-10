@@ -17,6 +17,9 @@ import com.mitchell.entity.manager.EntityManager;
 import com.mitchell.entity.manager.NonExistentEntityException;
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 
+/**
+ * The Class EstimateEndpoint.
+ */
 @Path("/estimate")
 public class EstimateEndpoint extends AbstractEstimateEndpoint {
     
@@ -24,6 +27,12 @@ public class EstimateEndpoint extends AbstractEstimateEndpoint {
         super(entityManager);
     }
 
+    /**
+     * Inits the.
+     *
+     * @param id the id
+     * @return the response
+     */
     @POST
     @Path("/{id:[0-9][0-9]*}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -32,15 +41,28 @@ public class EstimateEndpoint extends AbstractEstimateEndpoint {
         return Response.ok(estimate).build();
     }
 
+    /**
+     * Find.
+     *
+     * @param id the id
+     * @return the response
+     */
     @GET
     @Path("/{id:[0-9][0-9]*}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response findById(@PathParam("id") final String id) {
+    public Response find(@PathParam("id") final String id) {
         EstimateType estimate = findEstimate(id);
         
         return getResponse(estimate);
     }
 
+    /**
+     * Update.
+     *
+     * @param id the id
+     * @param estimate the estimate
+     * @return the response
+     */
     @PUT
     @Path("/{id:[0-9][0-9]*}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -48,10 +70,16 @@ public class EstimateEndpoint extends AbstractEstimateEndpoint {
         return Response.status(Status.BAD_REQUEST).build();
     }
 
+    /**
+     * Delete.
+     *
+     * @param id the id
+     * @return the response
+     */
     @DELETE
     @Path("/{id:[0-9][0-9]*}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteById(@PathParam("id") final String id) {
+    public Response delete(@PathParam("id") final String id) {
         Boolean result = deleteEstimate(id);
         
         return (true == result ? Response.ok() : Response.status(Status.BAD_REQUEST)).build();

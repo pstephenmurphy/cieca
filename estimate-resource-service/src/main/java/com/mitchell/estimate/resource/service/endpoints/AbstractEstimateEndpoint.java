@@ -7,16 +7,32 @@ import javax.ws.rs.WebApplicationException;
 
 import com.mitchell.entity.manager.EntityManager;
 import com.mitchell.entity.manager.NonExistentEntityException;
+
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 
+/**
+ * The Class AbstractEstimateEndpoint.
+ */
 public abstract class AbstractEstimateEndpoint {
 
     protected EntityManager<EstimateType, String> entityManager;
 
+    /**
+     * Instantiates a new abstract estimate endpoint.
+     *
+     * @param entityManager - the entity manager
+     */
     protected AbstractEstimateEndpoint(EntityManager<EstimateType, String> entityManager) {
         this.entityManager = entityManager;
     }
 
+    /**
+     * Find estimate.
+     *
+     * @param id - the id
+     * 
+     * @return the estimate type
+     */
     protected EstimateType findEstimate(final String id) {
         EstimateType estimate = null;
         try {
@@ -26,19 +42,44 @@ public abstract class AbstractEstimateEndpoint {
         } catch (NonExistentEntityException e) {
             handleException(e, Status.NOT_FOUND);
         }
+        
         return estimate;
     }
     
-    protected <T> GenericEntity<T> getGeneric(T list) {
+    /**
+     * Gets the generic.
+     *
+     * @param <T> - the generic type
+     * @param list - the list
+     * 
+     * @return the generic
+     */
+    protected <T> GenericEntity<T> getGeneric(final T list) {
         return new GenericEntity<T>(list) {
         };
     }
     
-    protected void handleException(Throwable cause, Status status) throws WebApplicationException {
+    /**
+     * Handle exception.
+     *
+     * @param cause - the cause
+     * @param status - the status
+     * 
+     * @throws WebApplicationException the web application exception
+     */
+    protected void handleException(final Throwable cause, final Status status) throws WebApplicationException {
     	throw new WebApplicationException(cause, Response.status(status).build());
     }
 
-    protected <T> Response getResponse(T object) {
+    /**
+     * Gets the response.
+     *
+     * @param <T> - the generic type
+     * @param object - the generic object
+     * 
+     * @return the response
+     */
+    protected <T> Response getResponse(final T object) {
     	Response response;
     	if (null == object) {
             response = Response.noContent().build();
@@ -47,4 +88,19 @@ public abstract class AbstractEstimateEndpoint {
         }
     	return response;
     }
+
+	/**
+	 * Update estimate.
+	 *
+	 * @param estimate - the estimate
+	 */
+	protected void updateEstimate(final EstimateType estimate) {
+		try {
+			entityManager.update(estimate);
+		} catch (IllegalArgumentException e) {
+			handleException(e, Status.INTERNAL_SERVER_ERROR);
+		} catch (NonExistentEntityException e) {
+			handleException(e, Status.INTERNAL_SERVER_ERROR);
+		}
+	}
 }

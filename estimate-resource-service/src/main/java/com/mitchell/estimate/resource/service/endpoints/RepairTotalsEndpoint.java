@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.mitchell.estimate.resource.service.endpoints;
 
 import java.util.List;
@@ -21,24 +18,33 @@ import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 import com.mitchell.estimate.resource.entity.totals.RepairTotalsInfoType;
 
 /**
- * @author pm104238
+ * The Class RepairTotalsEndpoint.
  *
+ * @author pm104238
  */
 @Path("/estimate")
 public class RepairTotalsEndpoint extends AbstractEstimateEndpoint {
     
+    /**
+     * Instantiates a new repair totals endpoint.
+     *
+     * @param entityManager the entity manager
+     */
     public RepairTotalsEndpoint(EntityManager<EstimateType, String> entityManager) {
         super(entityManager);
     }
 
     /**
-     * @param id
-     * @return
+     * Find.
+     *
+     * @param id - the id
+     * 
+     * @return the list
      */
     @GET
     @Path("/{id:[0-9][0-9]*}/repairTotals")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<RepairTotalsInfoType> findById(@PathParam("id") final String id) {
+    public List<RepairTotalsInfoType> find(@PathParam("id") final String id) {
         EstimateType estimate = findEstimate(id);
         List<RepairTotalsInfoType> repairTotals = (null != estimate ? estimate.getRepairTotalsInfo() : null);
 
@@ -48,10 +54,18 @@ public class RepairTotalsEndpoint extends AbstractEstimateEndpoint {
         return repairTotals;
     }
 
+    /**
+     * Find.
+     *
+     * @param id - the id
+     * @param index - the index
+     * 
+     * @return the response
+     */
     @GET
     @Path("/{id:[0-9][0-9]*}/repairTotal/{index:[0-9]+}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response findRepairTotalByIdAndIndex(@PathParam("id") final String id, @PathParam("index") final Integer index) {
+    public Response find(@PathParam("id") final String id, @PathParam("index") final Integer index) {
         EstimateType estimate = findEstimate(id);
         List<RepairTotalsInfoType> repairTotals = (null != estimate ? estimate.getRepairTotalsInfo() : null);
         
@@ -67,9 +81,12 @@ public class RepairTotalsEndpoint extends AbstractEstimateEndpoint {
     }
 
     /**
-     * @param id
-     * @param profileinfotype
-     * @return
+     * Update.
+     *
+     * @param id - the id
+     * @param repairTotals - the repair totals
+     * 
+     * @return the response
      */
     @PUT
     @Path("/{id:[0-9][0-9]*}/repairTotals")
@@ -78,6 +95,15 @@ public class RepairTotalsEndpoint extends AbstractEstimateEndpoint {
         return Response.noContent().build();
     }
     
+    /**
+     * Update.
+     *
+     * @param id - the id
+     * @param index - the index
+     * @param repairTotals - the repair totals
+     * 
+     * @return the response
+     */
     @PUT
     @Path("/{id:[0-9][0-9]*}/repairTotal/{index:[0-9]+}")
     @Consumes(MediaType.APPLICATION_JSON)

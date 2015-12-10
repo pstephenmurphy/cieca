@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.mitchell.estimate.resource.service.endpoints;
 
 import javax.ws.rs.Consumes;
@@ -18,8 +15,9 @@ import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 import com.mitchell.estimate.resource.entity.profile.ProfileInfoType;
 
 /**
- * @author pm104238
+ * The Class ProfileEndpoint.
  *
+ * @author pm104238
  */
 @Path("/estimate")
 public class ProfileEndpoint extends AbstractEstimateEndpoint {
