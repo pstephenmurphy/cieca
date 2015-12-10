@@ -9,10 +9,12 @@ import javax.xml.bind.JAXBException;
 
 import com.mitchell.entity.manager.EntityManager;
 import com.mitchell.entity.manager.impls.FileManagerImpl;
+
 import com.mitchell.estimate.resource.entity.estimate.EstimateType;
 import com.mitchell.estimate.resource.service.endpoints.AdminEndpoint;
 import com.mitchell.estimate.resource.service.endpoints.EstimateEndpoint;
 import com.mitchell.estimate.resource.service.endpoints.ProfileEndpoint;
+import com.mitchell.estimate.resource.service.endpoints.ProfileRateEndpoint;
 import com.mitchell.estimate.resource.service.endpoints.RepairTotalsEndpoint;
 import com.mitchell.estimate.resource.service.endpoints.VehicleEndpoint;
 
@@ -37,6 +39,7 @@ public class ReviewResourceService extends Application {
             singletons.add(new EstimateEndpoint(entityManager));
             singletons.add(new AdminEndpoint(entityManager));
             singletons.add(new ProfileEndpoint(entityManager));
+            singletons.add(new ProfileRateEndpoint(entityManager));
             singletons.add(new VehicleEndpoint(entityManager));
             singletons.add(new RepairTotalsEndpoint(entityManager));
             

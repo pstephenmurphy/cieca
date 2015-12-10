@@ -107,7 +107,7 @@ public class ProfileRateEndpoint extends AbstractEstimateEndpoint {
 		try {
             rateInfo = profileInfo.getRateInfo().get(index);
         } catch (IndexOutOfBoundsException e) {
-        	handleException(e, Status.INTERNAL_SERVER_ERROR);
+        	handleException(e, Status.BAD_REQUEST);
         }
 		return rateInfo;
 	}
@@ -147,10 +147,12 @@ public class ProfileRateEndpoint extends AbstractEstimateEndpoint {
 	private ProfileInfoType getProfile(final EstimateType estimate) {
 		ProfileInfoType profileInfo = estimate.getProfileInfo();
 		
-		profileInfo = new ProfileInfoType();
-		estimate.setProfileInfo(profileInfo);
+		if (null == profileInfo) {
+            profileInfo = new ProfileInfoType();
+            estimate.setProfileInfo(profileInfo);
+        }
 		
-		return profileInfo;
+        return profileInfo;
 	}
   
 	private RateInfoType getRate(final List<RateInfoType> rateInfos, final Integer index) {
@@ -159,7 +161,7 @@ public class ProfileRateEndpoint extends AbstractEstimateEndpoint {
 		try {
 			rateInfo = rateInfos.get(index);
 		} catch (IndexOutOfBoundsException e) {
-			handleException(e, Status.INTERNAL_SERVER_ERROR);
+			handleException(e, Status.BAD_REQUEST);
 		}
 		
 		return rateInfo;

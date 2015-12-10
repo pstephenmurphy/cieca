@@ -38,7 +38,7 @@ public abstract class AbstractEstimateEndpoint {
         try {
             estimate = entityManager.get(id);
         } catch (IllegalArgumentException e) {
-            handleException(e, Status.INTERNAL_SERVER_ERROR);
+            handleException(e, Status.BAD_REQUEST);
         } catch (NonExistentEntityException e) {
             handleException(e, Status.NOT_FOUND);
         }
@@ -98,9 +98,9 @@ public abstract class AbstractEstimateEndpoint {
 		try {
 			entityManager.update(estimate);
 		} catch (IllegalArgumentException e) {
-			handleException(e, Status.INTERNAL_SERVER_ERROR);
+			handleException(e, Status.BAD_REQUEST);
 		} catch (NonExistentEntityException e) {
-			handleException(e, Status.INTERNAL_SERVER_ERROR);
+			handleException(e, Status.NO_CONTENT);
 		}
 	}
 }
