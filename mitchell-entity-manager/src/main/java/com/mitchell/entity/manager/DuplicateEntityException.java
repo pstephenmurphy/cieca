@@ -1,6 +1,6 @@
 package com.mitchell.entity.manager;
 
-public class DuplicateEntityException extends Exception {
+public class DuplicateEntityException extends EntityManagerException {
 
     private static final long serialVersionUID = -4514075919870007369L;
 

@@ -10,6 +10,7 @@ import static com.mitchell.utility.Preconditions.checkArgument;
 import com.mitchell.entity.Entity;
 import com.mitchell.entity.manager.DuplicateEntityException;
 import com.mitchell.entity.manager.EntityManager;
+import com.mitchell.entity.manager.EntityManagerException;
 import com.mitchell.entity.manager.NonExistentEntityException;
 
 public class ManagerHashMapImpl<T extends Entity<K>, K> implements EntityManager<T, K> {
@@ -17,7 +18,7 @@ public class ManagerHashMapImpl<T extends Entity<K>, K> implements EntityManager
     private Map<K, T> managedEntities = new ConcurrentHashMap<K, T>();
     
     @Override
-    public void add(@Nonnull T managedEntity) throws DuplicateEntityException, IllegalArgumentException {
+    public void add(@Nonnull T managedEntity) throws EntityManagerException, IllegalArgumentException {
         checkArgument(managedEntity != null);
 
         if (!managedEntities.containsKey(managedEntity.getID())) {
@@ -29,7 +30,7 @@ public class ManagerHashMapImpl<T extends Entity<K>, K> implements EntityManager
     }
 
     @Override
-    public void update(@Nonnull T managedEntity) throws NonExistentEntityException, IllegalArgumentException {
+    public void update(@Nonnull T managedEntity) throws EntityManagerException, IllegalArgumentException {
         checkArgument(managedEntity != null);
 
         if (Boolean.FALSE == this.managedEntities.containsKey(managedEntity.getID())) {
@@ -40,7 +41,7 @@ public class ManagerHashMapImpl<T extends Entity<K>, K> implements EntityManager
     }
 
     @Override
-    public void delete(@Nonnull K id) throws NonExistentEntityException, IllegalArgumentException {
+    public void delete(@Nonnull K id) throws EntityManagerException, IllegalArgumentException {
         checkArgument(id != null);
 
         if (null == this.managedEntities.remove(id)) {
@@ -49,7 +50,7 @@ public class ManagerHashMapImpl<T extends Entity<K>, K> implements EntityManager
     }
 
     @Override
-    public T get(@Nonnull K id) throws NonExistentEntityException, IllegalArgumentException {
+    public T get(@Nonnull K id) throws EntityManagerException, IllegalArgumentException {
         T entity = null;
 
         checkArgument(id != null);

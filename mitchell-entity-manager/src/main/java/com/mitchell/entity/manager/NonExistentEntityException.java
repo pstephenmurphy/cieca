@@ -1,6 +1,6 @@
 package com.mitchell.entity.manager;
 
-public class NonExistentEntityException extends Exception {
+public class NonExistentEntityException extends EntityManagerException {
 
     private static final long serialVersionUID = 3727938573780049485L;
 

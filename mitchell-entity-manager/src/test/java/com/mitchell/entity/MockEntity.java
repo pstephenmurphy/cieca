@@ -12,7 +12,7 @@ public class MockEntity implements Entity<UUID> {
     private UUID entityId;
 
     public MockEntity() {
-        entityId = null;;
+        entityId = null;
     }
     
     public MockEntity(UUID uuid) {
@@ -23,5 +23,4 @@ public class MockEntity implements Entity<UUID> {
     public UUID getID() {
         return this.entityId;
     }
-
 }
