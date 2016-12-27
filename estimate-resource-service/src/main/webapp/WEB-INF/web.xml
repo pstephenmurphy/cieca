@@ -6,7 +6,7 @@
   
   <context-param>
     <param-name>resteasy.providers</param-name>
-    <param-value>com.mitchell.estimate.resource.service.exception.ReviewResourceServiceErrorHandler</param-value>
+    <param-value>com.cieca.estimate.resource.service.exception.ReviewResourceServiceErrorHandler</param-value>
   </context-param>
   
   <servlet>
@@ -14,7 +14,7 @@
     <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
     <init-param>
       <param-name>javax.ws.rs.Application</param-name>
-      <param-value>com.mitchell.estimate.resource.service.ReviewResourceService</param-value>
+      <param-value>com.cieca.estimate.resource.service.ReviewResourceService</param-value>
     </init-param>
   </servlet>
 

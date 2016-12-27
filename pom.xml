@@ -1,12 +1,5 @@
 <!-- This file is used to build and run all the examples -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <parent>
-      <groupId>com.mitchell.maven.apd</groupId>
-      <artifactId>super-pom</artifactId>
-      <version>1.0.0.0</version>
-      <relativePath>..</relativePath>
-    </parent>
-
     <name>Mitch Estimate Resource</name>
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,9 +9,11 @@
 
     <modules>
         <module>estimate-resource-service</module>
+        <module>entity-manager</module>
+        
+        
+        
         <module>estimate-resource-entity</module>
-        <module>mitchell-entity-manager</module> 
-        <module>mitchell-unitofwork-service</module>
     </modules>
     <version>0.0.0.1-SNAPSHOT</version>
 </project>

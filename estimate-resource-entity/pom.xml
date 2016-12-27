@@ -64,8 +64,8 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>mitchell-entity-manager</groupId>
-			<artifactId>mitchell-entity-manager</artifactId>
+			<groupId>entity-manager</groupId>
+			<artifactId>entity-manager</artifactId>
 			<version>0.0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
