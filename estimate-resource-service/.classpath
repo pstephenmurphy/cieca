@@ -24,6 +24,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/estimate-resource-entity"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/mitchell-entity-manager"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/entity-manager"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
