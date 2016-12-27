@@ -3,7 +3,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>estimate-resource-service</groupId>
 	<artifactId>estimate-resource-service</artifactId>
-	<version>0.0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>estimate-resource-service</name>
 	<description>Estimate Resource Service</description>
@@ -82,4 +81,5 @@
 			<version>0.0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
+	<version>v.0.1</version>
 </project>
